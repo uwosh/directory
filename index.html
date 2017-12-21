@@ -3,6 +3,12 @@
   <head>
     <title>University of Wisconsin Oshkosh - Directory</title>
 
+    <!-- Including Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    <!-- Including datatables styles -->
+    <link rel="stylesheet" type="text/css" href="datatables/datatables.min.css"/>
+
     <!-- Additions of Styles -->
     <link rel="stylesheet" type="text/css" media="all" href="styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -63,16 +69,16 @@
         <a class="toggle-nav">☰</a>
         <a class="toggle-quickLinks">☰</a>
         <ul class="top-nav">
-          <li><a href="http://www.uwosh.edu/about-uw-oshkosh/" class="topNav">About</a></li>
-          <li><a href="http://www.uwosh.edu/academics/" class="topNav">Academics</a></li>
-          <li><a href="http://www.uwoshkoshtitans.com/landing/index" class="topNav">Athletics</a></li>
-          <li><a href="http://www.uwosh.edu/alumni" class="topNav">Alumni</a></li>
-          <li><a href="https://admissions.uwosh.edu/" class="topNav">Admissions</a></li>
-          <li><a href="http://www.uwosh.edu/administration/" class="topNav">Administration</a></li>
-          <li><a href="http://www.uwosh.edu/resources/" class="topNav">Resources</a></li>
-          <li><a href="http://www.uwosh.edu/calendars/" class="topNav">Calendars</a></li>
+          <li><a href="http://www.uwosh.edu/about-uw-oshkosh/" class="top-nav-link">About</a></li>
+          <li><a href="http://www.uwosh.edu/academics/" class="top-nav-link">Academics</a></li>
+          <li><a href="http://www.uwoshkoshtitans.com/landing/index" class="top-nav-link">Athletics</a></li>
+          <li><a href="http://www.uwosh.edu/alumni" class="top-nav-link">Alumni</a></li>
+          <li><a href="https://admissions.uwosh.edu/" class="top-nav-link">Admissions</a></li>
+          <li><a href="http://www.uwosh.edu/administration/" class="top-nav-link">Administration</a></li>
+          <li><a href="http://www.uwosh.edu/resources/" class="top-nav-link">Resources</a></li>
+          <li><a href="http://www.uwosh.edu/calendars/" class="top-nav-link">Calendars</a></li>
           <li>
-            <a href="http://www.uwosh.edu/titan-services" class="topNav">Titan Services &#9662;</a>
+            <a href="http://www.uwosh.edu/titan-services" class="top-nav-link">Titan Services &#9662;</a>
             <ul class="titan-services">
               <li><a href="http://www.uwosh.edu/site-index" class="titanServices">Site Index</a></li>
               <li><a href="http://www.uwosh.edu/directory" class="titanServices">Directory</a></li>
@@ -109,79 +115,80 @@
     </div> <!-- End of "wrapper" -->
   </header>
   <body>
-    <div class="body-wrapper">
-      
-    </div>
+    <main class="body-wrapper">
+      <!-- the directory application goes here -->
+
+    </main>
+    <footer>
+      <div class="topFooter">
+        <span>The University of Wisconsin Oshkosh - Where Excellence and Opportuniy Meet.</span>
+      </div> <!-- End of "portal-footer" -->
+      <div class="middleFooter">
+        <div class="midFooter-container">
+          <div class="location-container mid-child">
+            <div class="wismap">
+              <a href="https://www.google.com/maps?q=University+of+Wisconsin+Oshkosh+800+Algoma+Blvd.+Oshkosh,+WI+54901&um=1&ie=UTF-8&hl=en&sa=N&tab=wl" target="_blank"><img src="images/footer/wismap-color.png"></a>
+            </div> <!-- End of "wismap" -->
+            <div class="address-phone">
+              <p><b>Location</b></p>
+              <p>
+                <a href="https://www.google.com/maps?q=University+of+Wisconsin+Oshkosh+800+Algoma+Blvd.+Oshkosh,+WI+54901&um=1&ie=UTF-8&hl=en&sa=N&tab=wl" target="_blank">University of Wisconsin Oshkosh</a><br />
+                <a href="https://www.google.com/maps/place/University+of+Wisconsin-Oshkosh/@44.0253186,-88.5532102,17z/data=!3m1!4b1!4m5!3m4!1s0x8803ebe40a08408b:0xb8f8ec18c1c8b267!8m2!3d44.0253186!4d-88.5510215?hl=en" target="_blank">
+                  800 Algoma Blvd.<br />
+                  Oshkosh, WI 54901<br />
+                </a>
+                <a href="#">(920) 424-1234</a>
+              </p> 
+            </div> <!-- End of "address-phone" -->
+          </div> <!-- End of "location-container" -->
+          <div class="mobileEmergency-container mid-child">
+            <div class="mobile-emergency">
+              <div>
+                <a href="https://umc.uwosh.edu/mobile-app/"><i class="fa fa-mobile desaturate" aria-hidden="true"></i></a>
+              </div>
+              <div>  
+                <a href="http://emergency.uwosh.edu/"><i class="fa fa-exclamation-triangle desaturate" aria-hidden="true"></i></a>
+              </div>
+            </div> <!-- End of "mobile-emergency" -->
+            <div class="mobileEmergency-links">
+              <p class="mobileEmergency-title"><b>Quick Links</b></p>
+              <p><a href="https://umc.uwosh.edu/mobile-app/">Download UW Oshkosh's Mobile App</a>
+              <p><a href="http://emergency.uwosh.edu/" class="emergency-p">Emergency and Safety Information</a></p>
+            </div> <!-- End of "mobileEmergency-links" -->
+          </div> <!-- End of mobileEmergency-container" -->
+          <div class="resources-container mid-child">
+            <div class="resourcesLinks">
+              <p><b>Resources</b></p>
+              <ul class="resources-links">
+                <li><a href="http://www.uwosh.edu/resources/accessibility/">Accessibility</a></li>
+                <li><a href="https://www.google.com/maps?q=University+of+Wisconsin+Oshkosh+800+Algoma+Blvd.+Oshkosh,+WI+54901&um=1&ie=UTF-8&hl=en&sa=N&tab=wl" target="_blank">Get Directions</a></li>
+                <li><a href="https://umc.uwosh.edu/for-media/">Media Relations</a></li>
+                <li><a href="https://hr.uwosh.edu/careers/">Work at UW Oshkosh</a></li>
+              </ul>
+            </div> <!-- End of "resourcesLinks" -->
+          </div> <!-- End of "resources-container" -->
+          <div class="accredited-container mid-child">
+            <div class="accredited-uwo">
+                <a href="http://www.hlcommission.org/?option=com_directory&Action=ShowBasic&instid=2030" target="_blank"><img src="images/footer/hlc.png" class="accredited"></a>
+                <a href="https://www.wisconsin.edu/" target="_blank"><img src="images/footer/uw-system.png" class="uwo-system"></a>
+            </div> <!-- End of "accredted-uwo" -->
+          </div> <!-- End of "accredited-container" -->
+        </div> <!-- End of "midFooter-container" -->
+      </div> <!-- End of "middleFooter" -->
+      <div class="bottomFooter">
+        <div class="copyright">
+          <span>&copy;<script>document.write(new Date().getFullYear())</script> UW Board of Regents</span>
+        </div> <!-- End of "copyright" -->
+        <div class="socialMedia-footer">
+            <a href="https://www.facebook.com/uwoshkosh" target="_blank"><i class="fa fa-facebook fa-2x desaturate" aria-hidden="true" alt="Facebook logo"></i></a>
+            <a href="https://twitter.com/uwoshkosh" target="_blank"><i class="fa fa-twitter fa-2x desaturate" aria-hidden="true" alt="Twitter logo"></i></a>
+            <a href="https://www.instagram.com/uwoshkosh/" target="_blank"><i class="fa fa-instagram fa-2x desaturate" aria-hidden="true" alt="Instagram logo"></i></a>
+            <a href="https://www.youtube.com/user/uwosh" target="_blank"><i class="fa fa-youtube-play fa-2x desaturate" aria-hidden="true" alt="YouTube logo"></i></a>
+            <a href="https://www.linkedin.com/edu/school?id=19693" target="_blank"><i class="fa fa-linkedin fa-2x desaturate" aria-hidden="true" alt="LinkedIn logo"></i></a>
+            <a href="https://www.pinterest.com/uwoshkosh/" target="_blank"><i class="fa fa-pinterest-p fa-2x desaturate" aria-hidden="true" alt="Pinterest logo"></i></a>
+            <a href="https://www.flickr.com/photos/uwoshkosh/sets/" target="_blank"><i class="fa fa-flickr fa-2x desaturate" aria-hidden="true" alt="Flickr logo"></i></a>
+        </div> <!--End of "socialMedia-Icons" -->
+      </div> <!-- End of "bottomContainer" -->
+    </footer>
   </body>
-  <footer>
-    <div class="topFooter">
-      <span>The University of Wisconsin Oshkosh - Where Excellence and Opportuniy Meet.</span>
-    </div> <!-- End of "portal-footer" -->
-    <div class="middleFooter">
-      <div class="midFooter-container">
-        <div class="location-container mid-child">
-          <div class="wismap">
-            <a href="https://www.google.com/maps?q=University+of+Wisconsin+Oshkosh+800+Algoma+Blvd.+Oshkosh,+WI+54901&um=1&ie=UTF-8&hl=en&sa=N&tab=wl" target="_blank"><img src="images/footer/wismap-color.png"></a>
-          </div> <!-- End of "wismap" -->
-          <div class="address-phone">
-            <p><b>Location</b></p>
-            <p>
-              <a href="https://www.google.com/maps?q=University+of+Wisconsin+Oshkosh+800+Algoma+Blvd.+Oshkosh,+WI+54901&um=1&ie=UTF-8&hl=en&sa=N&tab=wl" target="_blank">University of Wisconsin Oshkosh</a><br />
-              <a href="https://www.google.com/maps/place/University+of+Wisconsin-Oshkosh/@44.0253186,-88.5532102,17z/data=!3m1!4b1!4m5!3m4!1s0x8803ebe40a08408b:0xb8f8ec18c1c8b267!8m2!3d44.0253186!4d-88.5510215?hl=en" target="_blank">
-                800 Algoma Blvd.<br />
-                Oshkosh, WI 54901<br />
-              </a>
-              <a href="#">(920) 424-1234</a>
-            </p> 
-          </div> <!-- End of "address-phone" -->
-        </div> <!-- End of "location-container" -->
-        <div class="mobileEmergency-container mid-child">
-          <div class="mobile-emergency">
-            <div>
-              <a href="https://umc.uwosh.edu/mobile-app/"><i class="fa fa-mobile desaturate" aria-hidden="true"></i></a>
-            </div>
-            <div>  
-              <a href="http://emergency.uwosh.edu/"><i class="fa fa-exclamation-triangle desaturate" aria-hidden="true"></i></a>
-            </div>
-          </div> <!-- End of "mobile-emergency" -->
-          <div class="mobileEmergency-links">
-            <p class="mobileEmergency-title"><b>Quick Links</b></p>
-            <p><a href="https://umc.uwosh.edu/mobile-app/">Download UW Oshkosh's Mobile App</a>
-            <p><a href="http://emergency.uwosh.edu/" class="emergency-p">Emergency and Safety Information</a></p>
-          </div> <!-- End of "mobileEmergency-links" -->
-        </div> <!-- End of mobileEmergency-container" -->
-        <div class="resources-container mid-child">
-          <div class="resourcesLinks">
-            <p><b>Resources</b></p>
-            <ul class="resources-links">
-              <li><a href="http://www.uwosh.edu/resources/accessibility/">Accessibility</a></li>
-              <li><a href="https://www.google.com/maps?q=University+of+Wisconsin+Oshkosh+800+Algoma+Blvd.+Oshkosh,+WI+54901&um=1&ie=UTF-8&hl=en&sa=N&tab=wl" target="_blank">Get Directions</a></li>
-              <li><a href="https://umc.uwosh.edu/for-media/">Media Relations</a></li>
-              <li><a href="https://hr.uwosh.edu/careers/">Work at UW Oshkosh</a></li>
-            </ul>
-          </div> <!-- End of "resourcesLinks" -->
-        </div> <!-- End of "resources-container" -->
-        <div class="accredited-container mid-child">
-          <div class="accredited-uwo">
-              <a href="http://www.hlcommission.org/?option=com_directory&Action=ShowBasic&instid=2030" target="_blank"><img src="images/footer/hlc.png" class="accredited"></a>
-              <a href="https://www.wisconsin.edu/" target="_blank"><img src="images/footer/uw-system.png" class="uwo-system"></a>
-          </div> <!-- End of "accredted-uwo" -->
-        </div> <!-- End of "accredited-container" -->
-      </div> <!-- End of "midFooter-container" -->
-    </div> <!-- End of "middleFooter" -->
-    <div class="bottomFooter">
-      <div class="copyright">
-        <span>&copy;<script>document.write(new Date().getFullYear())</script> UW Board of Regents</span>
-      </div> <!-- End of "copyright" -->
-      <div class="socialMedia-footer">
-          <a href="https://www.facebook.com/uwoshkosh" target="_blank"><i class="fa fa-facebook fa-2x desaturate" aria-hidden="true" alt="Facebook logo"></i></a>
-          <a href="https://twitter.com/uwoshkosh" target="_blank"><i class="fa fa-twitter fa-2x desaturate" aria-hidden="true" alt="Twitter logo"></i></a>
-          <a href="https://www.instagram.com/uwoshkosh/" target="_blank"><i class="fa fa-instagram fa-2x desaturate" aria-hidden="true" alt="Instagram logo"></i></a>
-          <a href="https://www.youtube.com/user/uwosh" target="_blank"><i class="fa fa-youtube-play fa-2x desaturate" aria-hidden="true" alt="YouTube logo"></i></a>
-          <a href="https://www.linkedin.com/edu/school?id=19693" target="_blank"><i class="fa fa-linkedin fa-2x desaturate" aria-hidden="true" alt="LinkedIn logo"></i></a>
-          <a href="https://www.pinterest.com/uwoshkosh/" target="_blank"><i class="fa fa-pinterest-p fa-2x desaturate" aria-hidden="true" alt="Pinterest logo"></i></a>
-          <a href="https://www.flickr.com/photos/uwoshkosh/sets/" target="_blank"><i class="fa fa-flickr fa-2x desaturate" aria-hidden="true" alt="Flickr logo"></i></a>
-      </div> <!--End of "socialMedia-Icons" -->
-    </div> <!-- End of "bottomContainer" -->
-  </footer>
 </html>

@@ -216,7 +216,6 @@ ul li {
 }
 .nav {
     background: #444;
-    top: -16px;
     height: 46px;
 }
 .nav, .top-nav {
@@ -225,19 +224,26 @@ ul li {
 .top-nav {
     font-size: 1rem;
     text-align: center;
-    top: 13px;
-    left: -20px;
+    margin: 0 auto;
+    padding-left: 0;
+    height: 34px;
 }
-.topNav {
-    padding: 0 10px;
+.top-nav li {
+    height: 100%;
+}
+.top-nav-link {
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
     color: #fff;
     text-decoration: none;
+    display: inline-block;
 }
-.topNav:hover {
-    text-decoration: underline;
+.top-nav li:hover, .titan-services li:hover {
     background: #333;
-    padding-bottom: 14px;
-    padding-top: 13px;
+}
+.top-nav li:hover a {
+    color: white !important;
 }
 .titan-services {
     font-size: 1rem;
@@ -331,7 +337,7 @@ ul.titan-services li, ul li:hover ul.titan-services {
     text-decoration: none;
     color: #000;
 }
-.quickLinks {
+/* .quickLinks {
     text-decoration: none;
     padding-right: 10px;
     color: #000;
@@ -342,7 +348,7 @@ ul.titan-services li, ul li:hover ul.titan-services {
 }
 .quickLinks:hover {
     text-decoration: underline;
-}
+} */
 .body-container .tabLinks {
     text-align: center;
     width: 100%;
@@ -971,6 +977,10 @@ ul.titan-services li {
 .quicklinks {
     position: absolute;
     right: 0;
+}
+.quicklinks ul {
+    margin: 0;
+    padding: 5px 0 0;
 }
 .quicklinks li {
     padding-left: 5px;
