@@ -1,3 +1,6 @@
+<?php
+include_once('config.php');
+?>
 <!doctype html>
 <html lang="eng">
   <head>
@@ -14,54 +17,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="all" href="styles/nestedStyle.css">
-    
-    <!-- jQuery Library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <script>
-    $(document).ready(function(){
-      //Togglers for Drop Down Menus
-        //Top Nav
-      $('.toggle-nav').click(function(e) {
-        $(this).toggleClass('top-nav');
-        $('#main-navigation').toggleClass('top-nav');
-      });
-        //Quick Links
-      $('.toggle-quickLinks').click(function(e) {
-        $(this).toggleClass('quick-links');
-        $('.quicklinks').toggleClass('right-menu-active');
-      });
-      //Change background-color onclick for tabLinks
-      $('.tabLinks li').click(function(e){
-        $(this).addClass('white').siblings().removeClass('white');
-        e.preventDefault();
-      });
-      //TabLinks onclick to hide/show content
-      $('ul.tabLinks li').click(function(){
-        var tab_link = $(this).attr('data-tab');
-
-        $('ul.tabLinks li').removeClass('active');
-        $('.tabContent').removeClass('active');
-
-        $(this).addClass('active');
-        $('#'+tab_link).addClass('active');
-      });
-      //Change background-color onclick for searchTab-nav
-      $('.searchTab-nav li').click(function(e){
-        $(this).addClass('tabNav-white').siblings().removeClass('tabNav-white');
-        e.preventDefault();
-      });
-      //SearchTab-nav onclick to show/hide content
-      $('.searchTab-faculty').click(function(){
-        $('.department').show();
-      });
-      $('.searchTab-all, .searchTab-students').click(function(){
-        $('.department').hide();
-      });
-    });
-    </script>
-
-    <!-- endbuild -->
   </head>
   <header>
     <div class="wrapper">
@@ -117,6 +72,179 @@
   <body>
     <main class="body-wrapper">
       <!-- the directory application goes here -->
+
+      <div class="container">
+        <!-- Nav tabs -->
+        <ul id="bootstrap-tabs" class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#search" role="tab">Search</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#update-information" role="tab">Updating your information</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#printed-directory" role="tab">Printed Directory</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#retired-staff" role="tab">Retired Staff</a>
+          </li>
+        </ul>
+        
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div class="tab-pane active" id="search" role="tabpanel">
+            <div class="row">
+              <div class="col-md-8">
+                <input placeholder="Enter a name"><br />
+                <ul id="bootstrap-pills" class="nav nav-pills">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="all-pill" href="#">All</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="faculty-staff-pill" href="#">Faculty and Staff</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="students-pill" href="#">Students</a>
+                  </li>
+                </ul>
+                <div id="select-dept-dropdown" class="dropdown show department-select hidden">
+                  <a class="btn btn-secondary dropdown-toggle" href="https://example.com" id="select-department-content" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="Select a department">
+                    Select a department
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <!-- Loading in departments from the dept.txt file -->
+                    <?php
+                      $depts = file('depts.txt');
+                      foreach( $depts as $dept ) {
+                        $dept = trim($dept);
+                        print "<option class='dropdown-item select-department'>";
+                        print trim(preg_replace('/&/', '&amp;', $dept)) . "</option>\n";
+                      }
+                    ?>
+                  </div>
+                </div>
+                <button id="search-btn" type="button" class="btn btn-primary">Search</button>
+              </div>
+              <div class="col-md-4">
+                <p>
+                  Examples:<br>
+                  <b>First and Last Name:</b> Joe Smith or Smith, Joe<br />
+                  <b>Email or Last Name:</b> smith or Smith<br />
+                  <b>Campus Phone Number:</b> 1234
+                </p>
+              </div>
+            </div>
+            <div class="row results-row">
+              <div class="col-md-12">
+                <h3>Results</h3>
+                <table id="directory" class="display">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Mailstop</th>
+                    <th>Plus 4 Zip</th>
+                    <th>Office Room</th>
+                    <th>Phone</th>
+                    <th>Designation</th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Mailstop</th>
+                    <th>Plus 4 Zip</th>
+                    <th>Office Room</th>
+                    <th>Phone</th>
+                    <th>Designation</th>
+                  </tr>
+                </tfoot>
+                <tbody>
+                <?php
+                  // Create connection
+                  $conn = new mysqli($hostname, $user, $password, $database);
+  
+                  // Check connection
+                  if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                  }
+  
+                  $get_all = "SELECT username, lastname, firstname, mi, is_fac, is_stf, is_stu, is_oth, department, mailstop, zip, building, room, phone
+                              FROM directory_public LEFT JOIN directory_public_dept using(username)
+                              ORDER BY lastname, firstname";
+                  $result = $conn->query($get_all);
+  
+                  while($row = $result->fetch_assoc()) {
+                      $string = "<tr>";
+  
+                      // parsing name
+                      $string .= "<td>";
+                      $string .= $row["lastname"] . ", " . $row["firstname"] . " " . $row["mi"];
+                      $string .= "</td>";
+  
+                      // parsing department
+                      $string .= "<td>";
+                      $string .= $row["department"];
+                      $string .= "</td>";
+  
+                      // parsing mailstop
+                      $string .= "<td>";
+                      $string .= $row["mailstop"];
+                      $string .= "</td>";
+  
+                      // parsing plus 4 zip
+                      $string .= "<td>";
+                      $string .= $row["zip"];
+                      $string .= "</td>";
+  
+                      // parsing office
+                      $string .= "<td>";
+                      $string .= $row["room"] . " " . $row["building"];
+                      $string .= "</td>";
+  
+                      // parsing phone
+                      $string .= "<td>";
+                      $string .= $row["phone"];
+                      $string .= "</td>";
+  
+                      // parsing designation
+                      $string .= "<td>";
+                      if(strcmp($row["is_fac"], "Y") == 0){
+                        $string .= "Faculty";
+                      } else if(strcmp($row["is_stf"], "Y") == 0){
+                        $string .= "Staff";
+                      } else if (strcmp($row["is_stu"], "Y") == 0){
+                        $string .= "Student";
+                      } else {
+                        $string .= "Other";
+                      }
+                      $string .= "</td>";
+                      
+                      $string .= "</tr>";
+                      echo $string;
+                    }
+                    ?>
+                </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="update-information" role="tabpanel">
+            <p>Students: <a href="http://www.uwosh.edu/registrar/titanweb/">Log into TitanWeb.</a></p>
+            <p>Employees:To updated your home address, visit the <a href="https://my.wisconsin.edu">My UWSystem portal</a>; to update your departmental address, contact Rachael Kruszka in Human Resources at <a style="text-decoration:underline;" href="mailto:kruszkar@uwosh.edu?subject=Directory%20Update">kruszkar@uwosh.edu</a>.</p>
+            <p>Under the Family Educational Rights and Privacy Act, students may have requested the nondisclosure of directory information. This means that the search may not reveal the names of selected students.</p>
+          </div>
+          <div class="tab-pane" id="printed-directory" role="tabpanel">
+            <p>When it comes to sustainable practices, there are not many institutions that do it better than UW Oshkosh. In accordance with the University’s Sustainability Plan, there is a strong, growing on-campus recycling and waste reduction program. With this in mind it has been decided to forego the printed directory and instead embrace new technology.</p>
+            <p>The online directory, also available in the <a style="text-decoration:underline;" href="http://m.uwosh.edu">University Mobile App</a>, is a quick and easy way to get the information you need quickly.</p>
+          </div>
+          <div class="tab-pane" id="retired-staff" role="tabpanel">
+            <p><a href="http://www.uwosh.edu/directory/Directory_Retired_Staff_2014-15.pdf" style="text-decoration: underline">Directory of Retired Staff 2014-2015</a></p>
+          </div>
+        </div>
+      </div> <!-- end container -->
+
 
     </main>
     <footer>
@@ -190,5 +318,14 @@
         </div> <!--End of "socialMedia-Icons" -->
       </div> <!-- End of "bottomContainer" -->
     </footer>
+
+    <!-- Including Bootstrap plugins, Popper, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="datatables/datatables.min.js"></script>
+
+    <script type="text/javascript" src="js/directory.js"></script>
+    
   </body>
 </html>

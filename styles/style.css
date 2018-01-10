@@ -1054,3 +1054,22 @@ ul.titan-services li {
     padding-right: 13px;
 }
 }
+#bootstrap-tabs, #bootstrap-pills {
+    background: white !important;
+}
+.department-select{
+    display: inline-block;
+}
+.hidden{
+    display: none;
+}
+.department-select{
+    cursor: pointer;
+}
+#search-btn{
+    display: block;
+    cursor: pointer;
+}
+.results-row{
+    display: none;
+}
