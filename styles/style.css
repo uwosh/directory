@@ -235,12 +235,14 @@ ul li {
     padding-top: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    color: #fff;
+    color: #fff !important;
     text-decoration: none;
     display: inline-block;
 }
-.top-nav li:hover, .titan-services li:hover {
-    background: #333;
+@media only screen and (min-width: 949px) {
+    .top-nav li:hover, .titan-services li:hover {
+        background: #333;
+    }
 }
 .top-nav li:hover a {
     color: white !important;
@@ -251,7 +253,7 @@ ul li {
     padding: 15px;
 }
 .titanServices {
-    color: #fff;
+    color: #fff !important;
     text-decoration: none;
 }
 .titanServices:hover {
@@ -262,14 +264,23 @@ ul li {
 }
 ul.titan-services {
     background: #333;
-    display: none;
+    /* display: none; */
     position: absolute;
     z-index: 4;
-    top: 33px;
     text-align: left;
+}
+@media only screen and (min-width: 949px) {
+    ul.titan-services {
+        display: none;
+    }
 }
 ul.titan-services li, ul li:hover ul.titan-services {
     display: block;
+}
+@media only screen and (max-width: 948px) {
+    .titan-services {
+        display: block;
+    }
 }
 .logo-section {
     position: relative;
@@ -300,7 +311,6 @@ ul.titan-services li, ul li:hover ul.titan-services {
     }
     .right-menu-active {
         display: block;
-        top: -4px;
         background-color: #444;
         border-left-style: solid;
         border-left-color: #000;
@@ -312,7 +322,7 @@ ul.titan-services li, ul li:hover ul.titan-services {
     .right-menu-active li {
         display: block;
         text-align: right;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
     .right-menu-active li a {
         color: white;
@@ -890,15 +900,16 @@ footer p b {
     top: -36px;
     left: -120px;
 }
-.nav a.toggle-nav, a.toggle-quickLinks {
+.nav a.toggle-nav, .nav a.toggle-quickLinks {
     display: inline-block;
-    color: #fff;
+    color: #fff !important;
 }
 .toggle-nav {
     position: relative;
-    top: 20px;
     left: 0;
     float: left;
+    margin-left: 0;
+    padding-left: 8px;
 }
 .topNav:hover {
     text-decoration: underline;
@@ -910,7 +921,7 @@ footer p b {
     border: 2px solid #000;
     border-left: none;
     border-top: none;
-    left: -40px;
+    padding-left: 0 !important;
     z-index: 4;
 }
 .nav ul.top-nav {
@@ -919,21 +930,23 @@ footer p b {
 .nav ul {
     position: absolute;
     background: #444;
-    top: 46px;
     width: 195px;
+}
+.nav #main-navigation {
+    top: 50px;
 }
 .nav li {
     display: block;
     text-align: left;
     margin: 0 0 15px;
 }
-ul li:hover ul.titan-services {
+/* ul li:hover ul.titan-services {
     display: block;
     position: absolute;
     left: 40px;
     width: 165px;
     top: 282px;
-}
+} */
 ul.titan-services li {
     display: block;
 }
@@ -943,11 +956,11 @@ ul.titan-services li {
     margin: 0;
 }
 .toggle-quickLinks {
-    position: relative;
-    top: 20px;
+    position: absolute;
     float: right;
+    right: 0;
 }
-/* .uwo-quickLinks:active ul, .uwo-quickLinks ul {
+.uwo-quickLinks:active ul, .uwo-quickLinks ul {
     border: 2px solid #000;
     border-right: none;
     border-top: none;
@@ -972,7 +985,7 @@ ul.titan-services li {
     color: #fff;
     top: 0;
     left: -15px;
-} */
+}
 }
 .quicklinks {
     position: absolute;
@@ -985,6 +998,7 @@ ul.titan-services li {
 .quicklinks li {
     padding-left: 5px;
     padding-right: 5px;
+    padding-top: 5px;
 }
 .quicklinks a {
     color: #000;
@@ -1040,4 +1054,3 @@ ul.titan-services li {
     padding-right: 13px;
 }
 }
-/*# sourceMappingURL=style.css.map */

@@ -24,7 +24,7 @@
         //Top Nav
       $('.toggle-nav').click(function(e) {
         $(this).toggleClass('top-nav');
-        $('.nav ul').toggleClass('top-nav');
+        $('#main-navigation').toggleClass('top-nav');
       });
         //Quick Links
       $('.toggle-quickLinks').click(function(e) {
@@ -68,7 +68,7 @@
       <div class="nav">
         <a class="toggle-nav">☰</a>
         <a class="toggle-quickLinks">☰</a>
-        <ul class="top-nav">
+        <ul class="top-nav" id="main-navigation">
           <li><a href="http://www.uwosh.edu/about-uw-oshkosh/" class="top-nav-link">About</a></li>
           <li><a href="http://www.uwosh.edu/academics/" class="top-nav-link">Academics</a></li>
           <li><a href="http://www.uwoshkoshtitans.com/landing/index" class="top-nav-link">Athletics</a></li>
