@@ -158,7 +158,7 @@
                       <th>Designation</th>
                     </tr>
                   </tfoot>
-                  <tbody id="results-table">
+                  <tbody id="results-table-body">
                   </tbody>
                 </table>
               </div>
