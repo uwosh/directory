@@ -1,6 +1,3 @@
-<?php
-include_once('config.php');
-?>
 <!doctype html>
 <html lang="eng">
   <head>
@@ -95,16 +92,17 @@ include_once('config.php');
           <div class="tab-pane active" id="search" role="tabpanel">
             <div class="row">
               <div class="col-md-8">
-                <input placeholder="Enter a name"><br />
+                First name <input id="first-name-search" placeholder="Enter a first name">
+                Last name <input id="last-name-search" placeholder="Enter a last name"><br />
                 <ul id="bootstrap-pills" class="nav nav-pills">
                   <li class="nav-item">
-                    <a class="nav-link active" id="all-pill" href="#">All</a>
+                    <a class="nav-link active" id="all-pill" value="all" href="#">All</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" id="faculty-staff-pill" href="#">Faculty and Staff</a>
+                    <a class="nav-link" id="faculty-staff-pill" value="faculty-and-staff" href="#">Faculty and Staff</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" id="students-pill" href="#">Students</a>
+                    <a class="nav-link" id="students-pill" value="students" href="#">Students</a>
                   </li>
                 </ul>
                 <div id="select-dept-dropdown" class="dropdown show department-select hidden">
@@ -138,94 +136,30 @@ include_once('config.php');
               <div class="col-md-12">
                 <h3>Results</h3>
                 <table id="directory" class="display">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Department</th>
-                    <th>Mailstop</th>
-                    <th>Plus 4 Zip</th>
-                    <th>Office Room</th>
-                    <th>Phone</th>
-                    <th>Designation</th>
-                  </tr>
-                </thead>
-                <tfoot>
-                  <tr>
-                    <th>Name</th>
-                    <th>Department</th>
-                    <th>Mailstop</th>
-                    <th>Plus 4 Zip</th>
-                    <th>Office Room</th>
-                    <th>Phone</th>
-                    <th>Designation</th>
-                  </tr>
-                </tfoot>
-                <tbody>
-                <?php
-                  // Create connection
-                  $conn = new mysqli($hostname, $user, $password, $database);
-  
-                  // Check connection
-                  if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
-                  }
-  
-                  $get_all = "SELECT username, lastname, firstname, mi, is_fac, is_stf, is_stu, is_oth, department, mailstop, zip, building, room, phone
-                              FROM directory_public LEFT JOIN directory_public_dept using(username)
-                              ORDER BY lastname, firstname";
-                  $result = $conn->query($get_all);
-  
-                  while($row = $result->fetch_assoc()) {
-                      $string = "<tr>";
-  
-                      // parsing name
-                      $string .= "<td>";
-                      $string .= $row["lastname"] . ", " . $row["firstname"] . " " . $row["mi"];
-                      $string .= "</td>";
-  
-                      // parsing department
-                      $string .= "<td>";
-                      $string .= $row["department"];
-                      $string .= "</td>";
-  
-                      // parsing mailstop
-                      $string .= "<td>";
-                      $string .= $row["mailstop"];
-                      $string .= "</td>";
-  
-                      // parsing plus 4 zip
-                      $string .= "<td>";
-                      $string .= $row["zip"];
-                      $string .= "</td>";
-  
-                      // parsing office
-                      $string .= "<td>";
-                      $string .= $row["room"] . " " . $row["building"];
-                      $string .= "</td>";
-  
-                      // parsing phone
-                      $string .= "<td>";
-                      $string .= $row["phone"];
-                      $string .= "</td>";
-  
-                      // parsing designation
-                      $string .= "<td>";
-                      if(strcmp($row["is_fac"], "Y") == 0){
-                        $string .= "Faculty";
-                      } else if(strcmp($row["is_stf"], "Y") == 0){
-                        $string .= "Staff";
-                      } else if (strcmp($row["is_stu"], "Y") == 0){
-                        $string .= "Student";
-                      } else {
-                        $string .= "Other";
-                      }
-                      $string .= "</td>";
-                      
-                      $string .= "</tr>";
-                      echo $string;
-                    }
-                    ?>
-                </tbody>
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Department</th>
+                      <th>Mailstop</th>
+                      <th>Plus 4 Zip</th>
+                      <th>Office Room</th>
+                      <th>Phone</th>
+                      <th>Designation</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>Name</th>
+                      <th>Department</th>
+                      <th>Mailstop</th>
+                      <th>Plus 4 Zip</th>
+                      <th>Office Room</th>
+                      <th>Phone</th>
+                      <th>Designation</th>
+                    </tr>
+                  </tfoot>
+                  <tbody id="results-table">
+                  </tbody>
                 </table>
               </div>
             </div>
@@ -326,6 +260,7 @@ include_once('config.php');
     <script type="text/javascript" src="datatables/datatables.min.js"></script>
 
     <script type="text/javascript" src="js/directory.js"></script>
+    <script type="text/javascript" src="js/search-ajax.js"></script>
     
   </body>
 </html>
