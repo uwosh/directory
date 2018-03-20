@@ -53,10 +53,22 @@ $(document).ready(function(){
     });
 
     // dropdown logic
-    $('.select-department').click(function() {
-        let department = $(this).html().replace("&amp;", "&");
-        $('#select-department-content').text(department);
-        $('#select-department-content').attr('value', department);
+    //$('.select-department').click(function() {
+        
+     //   console.log($(this).html());
+     //   let department = $(this).html().replace("&amp;", "&");
+     //   $('#select-department-content').text(department);
+      //  console.log(department);
+      //  $('#select-department-content').attr('value', department);
+   // });
+
+   // department select logic
+   //edited to support a select element instead of a dropdown button
+   $('#select-department-content').change(function() {
+    var selectBox = document.getElementById("select-department-content");
+    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+    console.log(selectedValue);
+    $('#select-department-content').attr('value', selectedValue);
     });
 
     // displaying the results when the search button is clicked
@@ -66,4 +78,55 @@ $(document).ready(function(){
 
     // creating the datatable
     $('#directory').DataTable();
+
+   
 });
+
+function setMainDim(){
+    //set body-wrapper for the directory's max-width to the same as logoTitle's width (so that the heading and the content inside of the page are 
+    //the same width)
+    var logoWidth = $(".logoTitle").css("max-width");
+    //$(".body-wrapper").css("max-width", logoWidth);
+    $(".container").css("max-width", logoWidth);
+
+    //fix height of header that adds extra white space because of the Nav styling needing some extra space to place the text
+    //using the actual height of top-nav + logo-section to get the height of the header to get rid of extra white space
+    var topNavHeight = $(".top-nav").height();
+    var logoSectionHeight = $(".logo-section").height();
+    //+5 because the logoSection has a 5px top border
+    var wrapperHeight = topNavHeight + logoSectionHeight + 5; 
+    //console.log(topNavHeight + " +  " + logoSectionHeight);
+    //console.log(wrapperHeight);
+
+    $("header").css("height", wrapperHeight);
+    
+
+    //recalculates the  minimum height of main based on what is leftover from the header and footer in the window
+    //fixes white space issue beneath footer
+    var winHeight =  $(window).height();
+    var headerHeight = $("header").height();
+    var footerHeight = $("footer").height();
+ 
+    var mainHeight = winHeight - headerHeight- footerHeight;
+    $("main").css("min-height", mainHeight);
+
+}
+setMainDim();
+
+
+//all things that it needs to keep in line when the window resizes 
+$(window).resize(function(){
+    setMainDim();
+});
+
+var randomBG = ["images/background/horizon1.jpg", "images/background/awcc1.jpg", "images/background/aroundCampus1.jpg"];
+//0, 1, 2
+var randomInt = Math.floor((Math.random() * 3) + 0);
+
+document.getElementById("directory-background").src = randomBG[randomInt];
+
+// Disable search and ordering by default
+$.extend( $.fn.dataTable.defaults, {
+    searching: false,
+    ordering:  false
+} );

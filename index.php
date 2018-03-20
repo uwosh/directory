@@ -4,7 +4,9 @@
     <title>University of Wisconsin Oshkosh - Directory</title>
 
     <!-- Including Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    
+    <!--<link rel="stylesheet" type="text/css" href="bootstrap-4.0.0-dist/css/bootstrap.min.css"/>-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Including datatables styles -->
     <link rel="stylesheet" type="text/css" href="datatables/datatables.min.css"/>
@@ -14,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="all" href="styles/nestedStyle.css">
+
   </head>
   <header>
     <div class="wrapper">
@@ -69,7 +72,8 @@
   <body>
     <main class="body-wrapper">
       <!-- the directory application goes here -->
-
+      <img id="directory-background" src=""/>
+      
       <div class="container">
         <!-- Nav tabs -->
         <ul id="bootstrap-tabs" class="nav nav-tabs" role="tablist">
@@ -91,9 +95,8 @@
         <div class="tab-content">
           <div class="tab-pane active" id="search" role="tabpanel">
             <div class="row">
-              <div class="col-md-8">
-                First name <input id="first-name-search" placeholder="Enter a first name">
-                Last name <input id="last-name-search" placeholder="Enter a last name"><br />
+              <div class="col-md-10 mx-auto">
+
                 <ul id="bootstrap-pills" class="nav nav-pills">
                   <li class="nav-item">
                     <a class="nav-link active" id="all-pill" value="all" href="#">All</a>
@@ -105,24 +108,41 @@
                     <a class="nav-link" id="students-pill" value="students" href="#">Students</a>
                   </li>
                 </ul>
-                <div id="select-dept-dropdown" class="dropdown show department-select hidden">
-                  <a class="btn btn-secondary dropdown-toggle" href="https://example.com" id="select-department-content" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="Select a department">
-                    Select a department
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <!-- Loading in departments from the dept.txt file -->
-                    <?php
-                      $depts = file('depts.txt');
-                      foreach( $depts as $dept ) {
-                        $dept = trim($dept);
-                        print "<option class='dropdown-item select-department'>";
-                        print trim(preg_replace('/&/', '&amp;', $dept)) . "</option>\n";
-                      }
-                    ?>
+
+              <!--input names-->
+              <div id="inputName" class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="">Name</span>
                   </div>
+                  <input id="first-name-search" type="text" class="form-control" placeholder="Enter a first name" aria-label="Enter a first name" aria-describedby="basic-addon1">
+                  <input id="last-name-search" type="text" class="form-control" placeholder="Enter a last name" aria-label="Enter a last name" aria-describedby="basic-addon1">
                 </div>
+                
+                 <!--input department-->
+                <div id="select-dept-dropdown" class=" show  hidden input-group mb-3">
+                  <div class="input-group-prepend">
+                    <label  class="input-group-text" for="select-department-content">Department</label>
+                  </div>
+                  <select id="select-department-content" value="Select a department" class="custom-select"   >
+                  <option selected>Select a Department</option>
+
+                    <?php
+                      
+                        $depts = file('depts.txt');
+                        foreach( $depts as $dept ) {
+                          $dept = trim($dept);
+                          print "<option class='select-department'>";
+                          print trim(preg_replace('/&/', '&amp;', $dept)) . "</option>\n";
+                        }
+                      
+                      ?>
+                    
+                  </select>
+                </div>
+
                 <button id="search-btn" type="button" class="btn btn-primary">Search</button>
               </div>
+              <!--
               <div class="col-md-4">
                 <p>
                   Examples:<br>
@@ -131,6 +151,7 @@
                   <b>Campus Phone Number:</b> 1234
                 </p>
               </div>
+                    -->
             </div>
             <div class="row results-row">
               <div class="col-md-12">
@@ -141,12 +162,13 @@
                       <th>Name</th>
                       <th>Department</th>
                       <th>Mailstop</th>
-                      <th>Plus 4 Zip</th>
+                      <th>Campus Zip</th>
                       <th>Office Room</th>
                       <th>Phone</th>
                       <th>Designation</th>
                     </tr>
                   </thead>
+                  <!--
                   <tfoot>
                     <tr>
                       <th>Name</th>
@@ -158,6 +180,7 @@
                       <th>Designation</th>
                     </tr>
                   </tfoot>
+                    -->
                   <tbody id="results-table-body">
                   </tbody>
                 </table>
@@ -178,7 +201,7 @@
           </div>
         </div>
       </div> <!-- end container -->
-
+      
 
     </main>
     <footer>
@@ -255,8 +278,13 @@
 
     <!-- Including Bootstrap plugins, Popper, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+   
+   <!-- <script type="text/javascript" src="bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>-->
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
     <script type="text/javascript" src="datatables/datatables.min.js"></script>
 
     <script type="text/javascript" src="js/directory.js"></script>
