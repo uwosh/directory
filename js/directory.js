@@ -127,9 +127,7 @@ $(document).ready(function(){
     });
 
     // creating the datatable
-    $('#directory').DataTable({
-        "bProcesing" : false
-    } );
+    $('#directory').DataTable();
 
    
 });
