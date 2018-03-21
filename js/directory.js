@@ -41,8 +41,13 @@ $(document).ready(function(){
     //});
 
     // pills logic
-    $('.nav-pills a').click(function() {
-        $('.nav-pills a').removeClass('active');
+    //boostrap-pills (making sure the "active" class moves independently for each pill row)
+    $('#boostrap-pills1 a').click(function() {
+        $('#boostrap-pills1 a').removeClass('active');
+        $(this).addClass('active');
+    });
+    $('#bootstrap-pills2 a').click(function() {
+        $('#bootstrap-pills2 a').removeClass('active');
         $(this).addClass('active');
     });
 

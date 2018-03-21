@@ -172,7 +172,7 @@ ul.titan-services li, ul li:hover ul.titan-services {
 .tab-pane{
     margin-top: 20px;
 }
-#bootstrap-pills{
+#bootstrap-pills1, #bootstrap-pills2{
     margin-top: 15px;
     border-bottom: 1px solid #a2a1a2;
     height: 55px; 
@@ -871,7 +871,7 @@ ul.titan-services li {
 }
 }
 
-#bootstrap-tabs, #bootstrap-pills {
+#bootstrap-tabs, #bootstrap-pills1, #bootstrap-pills2 {
     background-color: #d0cece;
 }
 .department-select{

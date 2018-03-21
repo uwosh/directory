@@ -77,7 +77,7 @@
       <div class="container"><!--beginFullContainer-->
         <!-- Nav tabs -->
         <div id="tabsContainer"><!--beginTabs-->
-        <ul id="bootstrap-pills" class="nav nav-pills" role="tablist">
+        <ul id="bootstrap-pills1" class="nav nav-pills" role="tablist">
           <li class="nav-item">
             <a class="nav-link active" id="search-pill" data-toggle="pill" href="#pills-search" role="pill">Search</a>
           </li>
@@ -100,7 +100,7 @@
             <div class="row">
               <div class="col-md-10 mx-auto">
 
-                <ul id="bootstrap-pills" class="nav nav-pills">
+                <ul id="bootstrap-pills2" class="nav nav-pills">
                   <li class="nav-item">
                     <a class="nav-link active" id="all-pill" value="all" href="#">All</a>
                   </li>
