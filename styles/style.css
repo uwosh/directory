@@ -161,7 +161,9 @@ ul.titan-services li, ul li:hover ul.titan-services {
     margin-top: 20px;
 }
 #bootstrap-pills{
-    margin-top: 20px;
+    margin-top: 15px;
+    border-bottom: 1px solid #a2a1a2;
+    height: 55px; 
 }
 #search-btn{
     margin-top: 10px;
