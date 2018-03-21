@@ -54,12 +54,65 @@ $(document).ready(function(){
         $('#select-dept-dropdown').addClass('hidden');
     });
 
+
+    //search tab toggle
+    $("#search-pill").click(function(){
+        $("#update-information").addClass('hidden');
+        $("#printed-directory").addClass('hidden');
+        $("#retired-staff").addClass('hidden');
+
+        $("#update-information").removeClass('active');
+        $("#printed-directory").removeClass('active');
+        $("#retired-staff").removeClass('active');
+
+        $("#search").addClass('active');
+    });
+
+    //update information toggle
+    $("#update-pill").click(function(){
+        $("#search").addClass('hidden');
+        $("#printed-directory").addClass('hidden');
+        $("#retired-staff").addClass('hidden');
+
+        $("#search").removeClass('active');
+        $("#printed-directory").removeClass('active');
+        $("#retired-staff").removeClass('active');
+
+        $("#update-information").addClass('active');
+    });
+
+    //printed directory toggle
+    $("#print-pill").click(function(){
+        $("#search").addClass('hidden');
+        $("#update-information").addClass('hidden');
+        $("#retired-staff").addClass('hidden');
+
+        $("#search").removeClass('active');
+        $("#update-information").removeClass('active');
+        $("#retired-staff").removeClass('active');
+
+        $("#printed-directory").addClass('active');
+    });
+
+    //retired staff toggle
+    $("#retired-pill").click(function(){
+        $("#search").addClass('hidden');
+        $("#update-information").addClass('hidden');
+        $("#printed-directory").addClass('hidden');
+
+        $("#search").removeClass('active');
+        $("#update-information").removeClass('active');
+        $("#printed-directory").removeClass('active');
+
+        $("#retired-staff").addClass('active');
+    });
+
    // department select logic
    //edited to support a select element instead of a dropdown button
    $('#select-department-content').change(function() {
     var selectBox = document.getElementById("select-department-content");
     var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-    console.log(selectedValue);
+    
     $('#select-department-content').attr('value', selectedValue);
     });
 

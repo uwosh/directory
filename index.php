@@ -79,16 +79,16 @@
         <div id="tabsContainer"><!--beginTabs-->
         <ul id="bootstrap-pills" class="nav nav-pills" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active" data-toggle="pill" href="#pills-search" role="pill">Search</a>
+            <a class="nav-link active" id="search-pill" data-toggle="pill" href="#pills-search" role="pill">Search</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" href="#pills-update-information" role="pill">Updating your information</a>
+            <a class="nav-link" id="update-pill" data-toggle="pill" href="#pills-update-information" role="pill">Updating your information</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" href="#pills-printed-directory" role="pill">Printed Directory</a>
+            <a class="nav-link" id="print-pill" data-toggle="pill" href="#pills-printed-directory" role="pill">Printed Directory</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" href="#pills-retired-staff" role="pill">Retired Staff</a>
+            <a class="nav-link" id="retired-pill" data-toggle="pill" href="#pills-retired-staff" role="pill">Retired Staff</a>
           </li>
         </ul>
         
