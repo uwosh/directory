@@ -219,7 +219,7 @@
     </main>
     <footer>
       <div class="topFooter">
-        <span>The University of Wisconsin Oshkosh - Where Excellence and Opportuniy Meet.</span>
+        <span>The University of Wisconsin Oshkosh - Where Excellence and Opportunity Meet.</span>
       </div> <!-- End of "portal-footer" -->
       <div class="middleFooter">
         <div class="midFooter-container">
