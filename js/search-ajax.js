@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $("#search-btn").click(function(){
-        var group = $("#bootstrap-pills li .active").attr("value");
+        var group = $("#bootstrap-pills2 li .active").attr("value");
         var department = "";
         if( $("#select-department-content").attr("value") != "Select a department" ){
             department = $("#select-department-content").attr("value");

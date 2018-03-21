@@ -153,6 +153,13 @@ ul.titan-services li, ul li:hover ul.titan-services {
 
 }
 
+.container{
+    max-width: 1200px;
+}
+#directory{
+    width: 1200px;
+}
+
 .directory-title {
     font-size: 33px;
     font-weight: 600;
@@ -924,13 +931,13 @@ ul.titan-services li {
 
 /* table padding */
 #results-table-body > tr > td:nth-child(1){
-    width: 230px;
+    max-width: 230px;
 }
 #results-table-body > tr > td:nth-child(2){
-    width: 250px;
+    max-width: 250px;
 }
 #results-table-body > tr > td:nth-child(3){
-    width: 250px;
+    max-width: 250px;
 }
 
 #inputName{

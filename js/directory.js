@@ -136,8 +136,6 @@ function setMainDim(){
     //set body-wrapper for the directory's max-width to the same as logoTitle's width (so that the heading and the content inside of the page are 
     //the same width)
     var logoWidth = $(".logoTitle").css("max-width");
-    //$(".body-wrapper").css("max-width", logoWidth);
-    $(".container").css("max-width", logoWidth);
 
     //fix height of header that adds extra white space because of the Nav styling needing some extra space to place the text
     //using the actual height of top-nav + logo-section to get the height of the header to get rid of extra white space
@@ -145,8 +143,6 @@ function setMainDim(){
     var logoSectionHeight = $(".logo-section").height();
     //+5 because the logoSection has a 5px top border
     var wrapperHeight = topNavHeight + logoSectionHeight + 5; 
-    //console.log(topNavHeight + " +  " + logoSectionHeight);
-    //console.log(wrapperHeight);
 
     $("header").css("height", wrapperHeight);
     
