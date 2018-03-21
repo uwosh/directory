@@ -10,33 +10,35 @@ $(document).ready(function(){
         $(this).toggleClass('quick-links');
         $('.quicklinks').toggleClass('right-menu-active');
     });
+
+    
     //Change background-color onclick for tabLinks
-    $('.tabLinks li').click(function(e){
-        $(this).addClass('white').siblings().removeClass('white');
-        e.preventDefault();
-    });
+    //$('.tabLinks li').click(function(e){
+      //  $(this).addClass('white').siblings().removeClass('white');
+     //   e.preventDefault();
+    //});
     //TabLinks onclick to hide/show content
-    $('ul.tabLinks li').click(function(){
-        var tab_link = $(this).attr('data-tab');
+    //$('ul.tabLinks li').click(function(){
+     //   var tab_link = $(this).attr('data-tab');
 
-        $('ul.tabLinks li').removeClass('active');
-        $('.tabContent').removeClass('active');
+       // $('ul.tabLinks li').removeClass('active');
+       // $('.tabContent').removeClass('active');
 
-        $(this).addClass('active');
-        $('#'+tab_link).addClass('active');
-    });
+       // $(this).addClass('active');
+      //  $('#'+tab_link).addClass('active');
+    //});
     //Change background-color onclick for searchTab-nav
-    $('.searchTab-nav li').click(function(e){
-        $(this).addClass('tabNav-white').siblings().removeClass('tabNav-white');
-        e.preventDefault();
-    });
+    //$('.searchTab-nav li').click(function(e){
+      //  $(this).addClass('tabNav-white').siblings().removeClass('tabNav-white');
+     //   e.preventDefault();
+    //});
     //SearchTab-nav onclick to show/hide content
-    $('.searchTab-faculty').click(function(){
-        $('.department').show();
-    });
-    $('.searchTab-all, .searchTab-students').click(function(){
-        $('.department').hide();
-    });
+    //$('.searchTab-faculty').click(function(){
+     //   $('.department').show();
+    //});
+    //$('.searchTab-all, .searchTab-students').click(function(){
+     //   $('.department').hide();
+    //});
 
     // pills logic
     $('.nav-pills a').click(function() {
@@ -51,16 +53,6 @@ $(document).ready(function(){
     $('#all-pill, #students-pill').click(function() {
         $('#select-dept-dropdown').addClass('hidden');
     });
-
-    // dropdown logic
-    //$('.select-department').click(function() {
-        
-     //   console.log($(this).html());
-     //   let department = $(this).html().replace("&amp;", "&");
-     //   $('#select-department-content').text(department);
-      //  console.log(department);
-      //  $('#select-department-content').attr('value', department);
-   // });
 
    // department select logic
    //edited to support a select element instead of a dropdown button
