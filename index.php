@@ -184,7 +184,7 @@
         <div class="row results-row">
               <div class="col-md-12">
                 <h3>Results</h3>
-                <table id="directory" class="display">
+                <table id="directory" class="display table">
                   <thead>
                     <tr>
                       <th>Name</th>
