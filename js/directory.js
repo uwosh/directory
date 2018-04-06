@@ -177,7 +177,8 @@ var randomInt = Math.floor((Math.random() * 3) + 0);
 document.getElementById("directory-background").src = randomBG[randomInt];
 
 // Disable search and ordering by default
+/*
 $.extend( $.fn.dataTable.defaults, {
     searching: false,
-    ordering:  false
-} );
+    ordering:  true
+} );*/

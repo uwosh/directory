@@ -9,11 +9,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Including datatables styles -->
-    <link rel="stylesheet" type="text/css" href="datatables/datatables.min.css"/>
+    <!--
+    <link rel="stylesheet" type="text/css" href="datatables/datatables.min.css"/>-->
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/>
 
     <!-- Additions of Styles -->
     <link rel="stylesheet" type="text/css" media="all" href="styles/style.css">
-    
     <link rel="stylesheet" type="text/css" media="all" href="styles/nestedStyle.css">
 
   </head>
@@ -297,7 +299,11 @@
     
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
                    
+    <!-- this is the incorrect datatables min file, but it does load the table atm -->
     <script type="text/javascript" src="datatables/datatables.min.js"></script>
+    
+    <!-- this is the right datables min file to use, atm it does not load the table-->
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
 
     <script type="text/javascript" src="js/directory.js"></script>
     <script type="text/javascript" src="js/search-ajax.js"></script>
