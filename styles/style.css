@@ -930,6 +930,7 @@ ul.titan-services li {
 }
 
 /* table padding */
+/*
 #results-table-body > tr > td:nth-child(1){
     max-width: 230px;
 }
@@ -938,7 +939,7 @@ ul.titan-services li {
 }
 #results-table-body > tr > td:nth-child(3){
     max-width: 250px;
-}
+}*/
 
 #inputName{
     margin-top: 15px;
