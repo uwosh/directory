@@ -879,7 +879,7 @@ ul.titan-services li {
 }
 
 #bootstrap-tabs, #bootstrap-pills1, #bootstrap-pills2 {
-    background-color: #d0cece;
+    background-color: #E2E2E2;
 }
 .department-select{
     display: inline-block;
@@ -946,7 +946,7 @@ ul.titan-services li {
 }
 
 #tabsContainer{
-    background-color:  #d0cece;
+    background-color:  #E2E2E2;
     padding: 10px;
     border-radius: 5px;
   
@@ -993,3 +993,7 @@ a:hover{
 .tab-content{
     margin-bottom: 15px;
 }
+ #update-information, #printed-directory, #retired-staff{
+     padding-left: 15px;
+     padding-right: 15px;
+ }
