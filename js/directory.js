@@ -131,7 +131,7 @@ $(document).ready(function(){
 
     $('#directory').DataTable({
         serverSide: true, 
-        ajax: '\search.php'
+        ajax: 'search.php'
     });
    
 });
