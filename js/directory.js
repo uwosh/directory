@@ -127,11 +127,13 @@ $(document).ready(function(){
     });
 
     // creating the datatable
-    //$('#directory').DataTable();
+    $('#directory').DataTable();
 
     $('#directory').DataTable({
-        serverSide: true, 
-        ajax: 'search.php'
+        "serverSide": true, 
+        "ajax": {
+            url: "../dt-queries/test.php"
+        }
     });
    
 });

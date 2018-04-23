@@ -300,13 +300,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
                    
     <!-- this is the incorrect datatables min file, but it does load the table atm -->
-    <script type="text/javascript" src="datatables/datatables.min.js"></script>
+    <!-- <script type="text/javascript" src="datatables/datatables.min.js"></script> -->
     
     <!-- this is the right datables min file to use, atm it does not load the table-->
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
 
     <script type="text/javascript" src="js/directory.js"></script>
-    <script type="text/javascript" src="js/search-ajax.js"></script>
+    <script type="text/javascript" src="js/searchTest.js"></script>
+    <!--<script type="text/javascript" src="js/search-ajax.js"></script>-->
     
   </body>
 </html>
