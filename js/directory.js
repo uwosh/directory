@@ -129,12 +129,12 @@ $(document).ready(function(){
     // creating the datatable
     $('#directory').DataTable();
 
-    $('#directory').DataTable({
-        "serverSide": true, 
-        "ajax": {
-            url: "../dt-queries/test.php"
-        }
-    });
+    // $('#directory').DataTable({
+    //     "serverSide": true, 
+    //     "ajax": {
+    //         url: "../dt-queries/test.php"
+    //     }
+    // });
    
 });
 

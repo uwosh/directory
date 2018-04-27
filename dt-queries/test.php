@@ -18,7 +18,7 @@
  * Easy set variables
  */
  
-// DB table to use
+// DB table to use++
 $table = 'directory_public';
  
 // Table's primary key
