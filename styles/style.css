@@ -998,3 +998,13 @@ a:hover{
      padding-left: 15px;
      padding-right: 15px;
  }
+ .dataTables_wrapper .dataTables_paginate .paginate_button{
+     padding: 0px; 
+ }
+ /*show entries*/
+ #directory_length > label > select{
+     float: right;
+     width: 45px;
+     padding: 15px; 
+
+ }

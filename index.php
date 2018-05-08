@@ -3,21 +3,27 @@
   <head>
     <title>University of Wisconsin Oshkosh - Directory</title>
 
-    <!-- Including Bootstrap CSS -->
+<!-- Including Bootstrap CSS -->
     
-    <!--<link rel="stylesheet" type="text/css" href="bootstrap-4.0.0-dist/css/bootstrap.min.css"/>-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Including datatables styles -->
-    <!--
-    <link rel="stylesheet" type="text/css" href="datatables/datatables.min.css"/>-->
-
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/>
 
     <!-- Additions of Styles -->
     <link rel="stylesheet" type="text/css" media="all" href="styles/style.css">
     <link rel="stylesheet" type="text/css" media="all" href="styles/nestedStyle.css">
+    <!-- Including Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"> -->
 
+    <!-- Including datatables styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="datatables/datatables.min.css"/> -->
+
+    <!-- Additions of Styles -->
+    <!-- <link rel="stylesheet" type="text/css" media="all" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="all" href="styles/nestedStyle.css"> -->
   </head>
   <header>
     <div class="wrapper">
@@ -145,6 +151,8 @@
                 </div>
 
                 <button id="search-btn" type="button" class="btn btn-primary">Search</button>
+                <p id="errorName" style="color: red; display: none; ">Please enter a first and/or last name </p>
+                <p id="errorNameDepartment" style="color: red; display: none;"> Please enter a first and/or last name, or select a department</p>
               </div>
               <!--
               <div class="col-md-4">
@@ -185,30 +193,30 @@
               <div class="col-md-12">
                 <h3>Results</h3>
                 <table id="directory" class="display table">
-                  <thead>
+                <thead>
                     <tr>
-                      <th>Name</th>
-                      <th>Department</th>
-                      <th>Mailstop</th>
-                      <th>Campus Zip</th>
-                      <th>Office Room</th>
-                      <th>Phone</th>
-                      <th>Designation</th>
-                    </tr>
-                  </thead>
-                  <!--
-                  <tfoot>
-                    <tr>
-                      <th>Name</th>
+                      <th>First Name</th>
+                      <th>Last Name</th>
                       <th>Department</th>
                       <th>Mailstop</th>
                       <th>Plus 4 Zip</th>
-                      <th>Office Room</th>
+                      <th>Building</th>
+                      <th>Room</th>
                       <th>Phone</th>
-                      <th>Designation</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Department</th>
+                      <th>Mailstop</th>
+                      <th>Plus 4 Zip</th>
+                      <th>Building</th>
+                      <th>Room</th>
+                      <th>Phone</th>
                     </tr>
                   </tfoot>
-                    -->
                   <tbody id="results-table-body">
                   </tbody>
                 </table>
@@ -292,22 +300,11 @@
 
     <!-- Including Bootstrap plugins, Popper, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-   
-   <!-- <script type="text/javascript" src="bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>-->
-    
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-                   
-    <!-- this is the incorrect datatables min file, but it does load the table atm -->
-    <!-- <script type="text/javascript" src="datatables/datatables.min.js"></script> -->
-    
-    <!-- this is the right datables min file to use, atm it does not load the table-->
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="datatables/datatables.min.js"></script>
 
     <script type="text/javascript" src="js/directory.js"></script>
-    <script type="text/javascript" src="js/searchTest.js"></script>
-    <!--<script type="text/javascript" src="js/search-ajax.js"></script>-->
     
   </body>
 </html>

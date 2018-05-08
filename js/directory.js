@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    //Togglers for Drop Down Menus
+     //Togglers for Drop Down Menus
     //Top Nav
     $('.toggle-nav').click(function(e) {
         $(this).toggleClass('top-nav');
@@ -10,36 +10,6 @@ $(document).ready(function(){
         $(this).toggleClass('quick-links');
         $('.quicklinks').toggleClass('right-menu-active');
     });
-
-    
-    //Change background-color onclick for tabLinks
-    //$('.tabLinks li').click(function(e){
-      //  $(this).addClass('white').siblings().removeClass('white');
-     //   e.preventDefault();
-    //});
-    //TabLinks onclick to hide/show content
-    //$('ul.tabLinks li').click(function(){
-     //   var tab_link = $(this).attr('data-tab');
-
-       // $('ul.tabLinks li').removeClass('active');
-       // $('.tabContent').removeClass('active');
-
-       // $(this).addClass('active');
-      //  $('#'+tab_link).addClass('active');
-    //});
-    //Change background-color onclick for searchTab-nav
-    //$('.searchTab-nav li').click(function(e){
-      //  $(this).addClass('tabNav-white').siblings().removeClass('tabNav-white');
-     //   e.preventDefault();
-    //});
-    //SearchTab-nav onclick to show/hide content
-    //$('.searchTab-faculty').click(function(){
-     //   $('.department').show();
-    //});
-    //$('.searchTab-all, .searchTab-students').click(function(){
-     //   $('.department').hide();
-    //});
-
     // pills logic
     //boostrap-pills (making sure the "active" class moves independently for each pill row)
     $('#boostrap-pills1 a').click(function() {
@@ -121,21 +91,77 @@ $(document).ready(function(){
     $('#select-department-content').attr('value', selectedValue);
     });
 
+   var group; 
+   var department; 
+   var firstname; 
+   var lastname; 
     // displaying the results when the search button is clicked
     $('#search-btn').click(function() {
-        $('.results-row').css('display', 'flex');
+        makeTable();
+
+        //if the search fields are empty do not display a table, instead display an error message
+        if((department == "" && firstname == "" && lastname == "" )) {
+            $('.results-row').css('display', 'none');
+            if(group == "all" || group == "students"){
+                $('#errorNameDepartment').css('display', 'none');
+                $('#errorName').css('display', 'flex');
+            }
+            else if(group == "faculty-and-staff"){
+                $('#errorName').css('display', 'none');
+                $('#errorNameDepartment').css('display', 'flex');
+            }
+        //if the search fields are not empty, display the table (and hide any error messages)
+        }else{
+            $('#errorNameDepartment').css('display', 'none');
+            $('#errorName').css('display', 'none');
+
+            $('.results-row').css('display', 'flex');
+        }
     });
 
     // creating the datatable
-    $('#directory').DataTable();
+    
+   function makeTable(){
+     group = $("#bootstrap-pills2 li .active").attr("value");
+    //var department = "";
+    if(( $("#select-department-content").attr("value") == "Select a department" ) || ($("#select-department-content").attr("value") == "Select a Department")){
+       department = "";
+    }else{
+        department = $("#select-department-content").attr("value");
+    }
+    firstname = $("#first-name-search").val();
+    lastname = $("#last-name-search").val();
+    console.log("Group: " + group + "\nDepartment: " + department + "\nFirst Name: " + firstname + "\nLast Name: " + lastname);
 
-    // $('#directory').DataTable({
-    //     "serverSide": true, 
-    //     "ajax": {
-    //         url: "../dt-queries/test.php"
-    //     }
-    // });
-   
+    var data = {
+        group: group,
+        department: department,
+        firstname: firstname,
+        lastname: lastname
+    };
+
+    $('#directory').DataTable({
+        "searching": false,
+        "bDestroy": true,
+        ajax: {
+            url: '../search.php',
+            dataSrc: '',
+            type: "POST",
+            data: data
+        },
+        columns: [
+            { data: 'firstname' },
+            { data: 'lastname' },
+            { data: 'department' },
+            { data: 'mailstop' },
+            { data: 'zip' },
+            { data: 'building' },
+            { data: 'room' },
+            { data: 'phone' }
+        ]
+    });
+   };
+    
 });
 
 function setMainDim(){
@@ -177,9 +203,6 @@ var randomInt = Math.floor((Math.random() * 3) + 0);
 
 document.getElementById("directory-background").src = randomBG[randomInt];
 
-// Disable search and ordering by default
-/*
-$.extend( $.fn.dataTable.defaults, {
-    searching: false,
-    ordering:  true
-} );*/
+// $('#directory').dataTable( {
+//     "searching": false
+//   } );

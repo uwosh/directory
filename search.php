@@ -32,7 +32,7 @@ if($group == "all"){
       WHERE lastname LIKE '%' ? '%' AND firstname LIKE '%' ? '%' AND department LIKE '%' ? '%' AND ( is_fac = 'Y' OR is_stf = 'Y')
       ORDER BY lastname, firstname"
   );
-} else if($group == "students"){
+} else{
   // only get students
   $stmt = $conn->prepare(
     "SELECT username, lastname, firstname, mi, is_fac, is_stf, is_stu, is_oth, department, mailstop, zip, building, room, phone
@@ -47,4 +47,3 @@ $stmt->execute(array($lastname, $firstname, $department));
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 echo json_encode($result);
-
