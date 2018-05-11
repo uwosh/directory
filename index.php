@@ -286,15 +286,15 @@
         <div class="copyright">
           <span>&copy;<script>document.write(new Date().getFullYear())</script> UW Board of Regents</span>
         </div> <!-- End of "copyright" -->
-        <div class="socialMedia-footer">
-            <a href="https://www.facebook.com/uwoshkosh" target="_blank"><i class="fa fa-facebook fa-2x desaturate" aria-hidden="true" alt="Facebook logo"></i></a>
-            <a href="https://twitter.com/uwoshkosh" target="_blank"><i class="fa fa-twitter fa-2x desaturate" aria-hidden="true" alt="Twitter logo"></i></a>
-            <a href="https://www.instagram.com/uwoshkosh/" target="_blank"><i class="fa fa-instagram fa-2x desaturate" aria-hidden="true" alt="Instagram logo"></i></a>
-            <a href="https://www.youtube.com/user/uwosh" target="_blank"><i class="fa fa-youtube-play fa-2x desaturate" aria-hidden="true" alt="YouTube logo"></i></a>
-            <a href="https://www.linkedin.com/edu/school?id=19693" target="_blank"><i class="fa fa-linkedin fa-2x desaturate" aria-hidden="true" alt="LinkedIn logo"></i></a>
-            <a href="https://www.pinterest.com/uwoshkosh/" target="_blank"><i class="fa fa-pinterest-p fa-2x desaturate" aria-hidden="true" alt="Pinterest logo"></i></a>
-            <a href="https://www.flickr.com/photos/uwoshkosh/sets/" target="_blank"><i class="fa fa-flickr fa-2x desaturate" aria-hidden="true" alt="Flickr logo"></i></a>
-        </div> <!--End of "socialMedia-Icons" -->
+        <div id="footer-social">
+						<a href="https://www.facebook.com/uwoshkosh" target="_blank" class="footerFacebook"><i class="fa fa-facebook fa-2x desaturate" aria-hidden="true" alt="Facebook logo"></i></a>
+						<a href="https://twitter.com/uwoshkosh" target="_blank" class="footerTwitter"><i class="fa fa-twitter fa-2x desaturate" aria-hidden="true" alt="Twitter logo"></i></a>
+						<a href="http://instagram.com/uwoshkosh" target="_blank" class="footerInstagram"><i class="fa fa-instagram fa-2x desaturate" aria-hidden="true" alt="Instagram logo"></i></a>
+						<a href="http://www.youtube.com/uwosh" target="_blank" class="footerYouTube"><i class="fa fa-youtube-play fa-2x desaturate" aria-hidden="true" alt="YouTube logo"></i></a>
+						<a href="http://www.linkedin.com/edu/school?id=19693" target="_blank" class="footerLinkedIn"><i class="fa fa-linkedin fa-2x desaturate" aria-hidden="true" alt="LinkedIn logo"></i></a>
+						<a href="http://www.pinterest.com/uwoshkosh/" target="_blank" class="footerPinterest"><i class="fa fa-pinterest-p fa-2x desaturate" aria-hidden="true" alt="Pinterest logo"></i></a>
+						<a href="http://www.flickr.com/photos/uwoshkosh/sets/" target="_blank" class="footerFlickr"><i class="fa fa-flickr fa-2x desaturate" aria-hidden="true" alt="Flickr logo"></i></a>
+					</div>
       </div> <!-- End of "bottomContainer" -->
     </footer>
 
