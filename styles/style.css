@@ -115,7 +115,8 @@ ul.titan-services li, ul li:hover ul.titan-services {
 .wordmark-wrapper {
     float: left;
 }
-@media only screen and (max-width: 948px) {
+/* max-width: 948px */
+@media only screen and (max-width: 1220px) {
     .quicklinks {
         display: none;
     }
@@ -163,7 +164,7 @@ ul.titan-services li, ul li:hover ul.titan-services {
 .directory-title {
     font-size: 33px;
     font-weight: 600;
-    margin-bottom: 33px;
+    margin-bottom: 15px;
     position: absolute;
     bottom: 0;
 }
