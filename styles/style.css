@@ -351,7 +351,7 @@ footer p b {
     -webkit-filter: none;
     filter: none;
 }
-.mobile-emergency .fa-mobile {
+.mobile-emergency .fa-mobile-alt {
     font-size: 60px;
     position: relative;
 }
@@ -402,6 +402,13 @@ footer p b {
     padding-top: 23px;
     padding-left: 10px;
 }
+#footer-social{
+    float: right;
+    padding: 15px;
+}
+#footer-social a{
+    padding-right: 10px;
+}
 .socialMedia-footer {
     float: right;
     padding-top: 16px;
@@ -411,7 +418,7 @@ footer p b {
     color: #b0b0b0;
     padding-right: 20px;
 }
-.fa-facebook:hover {
+.fa-facebook-f:hover {
     color: #3b5998;
 }
 .fa-twitter:hover {
@@ -420,7 +427,7 @@ footer p b {
 .fa-instagram:hover {
     color: #f56040;
 }
-.fa-youtube-play:hover {
+.fa-youtube:hover {
     color: #cd201f;
 }
 .fa-linkedin:hover {
@@ -1424,7 +1431,7 @@ footer p b {
     color: #b0b0b0;
     padding-right: 20px;
 }
-.fa-facebook:hover {
+.fa-facebook-f:hover {
     color: #3b5998;
 }
 .fa-twitter:hover {
@@ -1433,7 +1440,7 @@ footer p b {
 .fa-instagram:hover {
     color: #f56040;
 }
-.fa-youtube-play:hover {
+.fa-youtube:hover {
     color: #cd201f;
 }
 .fa-linkedin:hover {
