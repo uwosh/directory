@@ -150,8 +150,10 @@ $(document).ready(function(){
             data: data
         },
         columns: [
+            
             { data: 'firstname' },
             { data: 'lastname' },
+            { data: 'username'},
             { data: 'department' },
             { data: 'mailstop' },
             { data: 'zip' },

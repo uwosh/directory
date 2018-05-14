@@ -20,7 +20,7 @@ if($group == "all"){
     "SELECT username, lastname, firstname, mi, is_fac, is_stf, is_stu, is_oth, department, mailstop, zip, building, room, phone
       FROM directory_public
       LEFT JOIN directory_public_dept USING (username)
-      WHERE lastname LIKE '%' ? '%' AND firstname LIKE '%' ? '%' AND department LIKE '%' ? '%'
+      WHERE lastname LIKE '%' ? '%' AND firstname LIKE '%' ? '%' AND ((department LIKE '%' ? '%') OR (department IS NULL)) AND ( is_fac = 'Y' OR is_stf = 'Y' OR is_stu = 'Y')
       ORDER BY lastname, firstname"
   );
 } else if($group == "faculty-and-staff"){
@@ -33,22 +33,14 @@ if($group == "all"){
       ORDER BY lastname, firstname"
   );
 } else{
-  // only get students
+  //only get students
   $stmt = $conn->prepare(
     "SELECT username, lastname, firstname, mi, is_fac, is_stf, is_stu, is_oth, department, mailstop, zip, building, room, phone
       FROM directory_public
       LEFT JOIN directory_public_dept USING (username)
-      WHERE lastname LIKE '%' ? '%' AND firstname LIKE '%' ? '%' AND department LIKE '%' ? '%' AND is_stu = 'Y'
+      WHERE lastname LIKE '%' ? '%' AND firstname LIKE '%' ? '%' AND ((department LIKE '%' ? '%') OR (department IS NULL)) AND (is_stu = 'Y')
       ORDER BY lastname, firstname"
   );
-  // $stmt = $conn->prepare(
-  //   "SELECT username, lastname, firstname
-  //     FROM directory_public
-  //     -- LEFT JOIN directory_public_dept USING (username)
-  //     --  WHERE lastname LIKE '%' ? '%' AND firstname LIKE '%' ? '%' AND department LIKE '%' ? '%' AND is_stu = 'Y'
-  //     WHERE lastname LIKE '%' ? '%' AND firstname LIKE '%' ? '%'  AND is_stu = 'Y'
-  //     ORDER BY lastname, firstname"
-  // );
 }
 
 $stmt->execute(array($lastname, $firstname, $department));

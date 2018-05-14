@@ -195,8 +195,10 @@
                 <table id="directory" class="display table">
                 <thead>
                     <tr>
+                      
                       <th>First Name</th>
                       <th>Last Name</th>
+                      <th>NetID</th>
                       <th>Department</th>
                       <th>Mailstop</th>
                       <th>Plus 4 Zip</th>
@@ -207,8 +209,10 @@
                   </thead>
                   <tfoot>
                     <tr>
+                       
                       <th>First Name</th>
                       <th>Last Name</th>
+                      <th>NetID</th>
                       <th>Department</th>
                       <th>Mailstop</th>
                       <th>Plus 4 Zip</th>
