@@ -41,6 +41,14 @@ if($group == "all"){
       WHERE lastname LIKE '%' ? '%' AND firstname LIKE '%' ? '%' AND department LIKE '%' ? '%' AND is_stu = 'Y'
       ORDER BY lastname, firstname"
   );
+  // $stmt = $conn->prepare(
+  //   "SELECT username, lastname, firstname
+  //     FROM directory_public
+  //     -- LEFT JOIN directory_public_dept USING (username)
+  //     --  WHERE lastname LIKE '%' ? '%' AND firstname LIKE '%' ? '%' AND department LIKE '%' ? '%' AND is_stu = 'Y'
+  //     WHERE lastname LIKE '%' ? '%' AND firstname LIKE '%' ? '%'  AND is_stu = 'Y'
+  //     ORDER BY lastname, firstname"
+  // );
 }
 
 $stmt->execute(array($lastname, $firstname, $department));
