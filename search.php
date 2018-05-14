@@ -43,6 +43,8 @@ if($group == "all"){
   );
 }
 
+
+
 $stmt->execute(array($lastname, $firstname, $department));
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

@@ -201,7 +201,7 @@
                       
                       <th>First Name</th>
                       <th>Last Name</th>
-                      <th>NetID</th>
+                      <th>E-mail</th>
                       <th>Department</th>
                       <th>Mailstop</th>
                       <th>Plus 4 Zip</th>
@@ -215,7 +215,7 @@
                        
                       <th>First Name</th>
                       <th>Last Name</th>
-                      <th>NetID</th>
+                      <th>E-mail</th>
                       <th>Department</th>
                       <th>Mailstop</th>
                       <th>Plus 4 Zip</th>
@@ -295,7 +295,7 @@
         </div> <!-- End of "copyright" -->
         <div id="footer-social">
             <a href="https://www.facebook.com/uwoshkosh" target="_blank" class="footerFacebook"><i class="fab fa-facebook-f fa-2x desaturate" alt="Facebook logo"></i></a>
-						<a href="https://twitter.com/uwoshkosh" target="_blank" class="footerTwitter"><i class="fab fa-twitter fa-2x"></i></a>
+						<a href="https://twitter.com/uwoshkosh" target="_blank" class="footerTwitter"><i class="fab fa-twitter fa-2x desaturate"></i></a>
 						<a href="http://instagram.com/uwoshkosh" target="_blank" class="footerInstagram"><i class="fab fa-instagram fa-2x desaturate" aria-hidden="true" alt="Instagram logo"></i></a>
 						<a href="http://www.youtube.com/uwosh" target="_blank" class="footerYouTube"><i class="fab fa-youtube fa-2x desaturate" aria-hidden="true" alt="YouTube logo"></i></a>
 						<a href="http://www.linkedin.com/edu/school?id=19693" target="_blank" class="footerLinkedIn"><i class="fab fa-linkedin fa-2x desaturate" aria-hidden="true" alt="LinkedIn logo"></i></a>

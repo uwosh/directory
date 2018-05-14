@@ -153,7 +153,11 @@ $(document).ready(function(){
             
             { data: 'firstname' },
             { data: 'lastname' },
-            { data: 'username'},
+            { data: 'username',
+                "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
+                 $(nTd).html("<a href='mailto:"+oData.username+"@uwosh.edu'>"+oData.username+"@uwosh.edu</a>");
+            }
+             },
             { data: 'department' },
             { data: 'mailstop' },
             { data: 'zip' },
