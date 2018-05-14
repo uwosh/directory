@@ -2023,9 +2023,16 @@ a:hover{
      padding: 15px; 
 
  }
+ /* Where Excellence and Opportunity Meet. */
  body > footer > div.topFooter > span{
      position: relative;
      top: 10px;
      font-weight: 700; 
      color: #444;
+ }
+
+ @media screen and (max-width:680px){
+     #bootstrap-pills1{
+         height: 110px; 
+     }
  }
