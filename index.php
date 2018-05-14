@@ -179,7 +179,7 @@
           </div>
           <div class="tab-pane" id="printed-directory" role="tabpanel" aria-labelledby="pills-printed-directory-tab">
             <p>When it comes to sustainable practices, there are not many institutions that do it better than UW Oshkosh. In accordance with the University’s Sustainability Plan, there is a strong, growing on-campus recycling and waste reduction program. With this in mind it has been decided to forego the printed directory and instead embrace new technology.</p>
-            <p>The online directory, also available in the <a style="text-decoration:underline;" href="http://m.uwosh.edu">University Mobile App</a>, is a quick and easy way to get the information you need quickly.</p>
+            <p>The online directory, also available in the <a style="text-decoration:underline;" href="https://uwosh.edu/umc/mobile-app/">University Mobile App</a>, is a quick and easy way to get the information you need quickly.</p>
           </div>
           <div class="tab-pane" id="retired-staff" role="tabpanel" aria-labelledby="pills-retired-staff-tab">
             <p><a href="http://www.uwosh.edu/directory/Directory_Retired_Staff_2014-15.pdf" style="text-decoration: underline">Directory of Retired Staff 2014-2015</a></p>
