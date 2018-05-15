@@ -53,7 +53,7 @@
               <li><a href="https://my.wisconsin.edu/" class="titanServices">My UW System</a></li>
               <li><a href="http://www.uwosh.edu/d2l/" class="titanServices">Desire2Learn(D2L)</a></li>
               <li><a href="http://www.uwosh.edu/library/" class="titanServices">Polk Library</a></li>
-              <li><a href="http://www.uwosh.edu/myuwo/" class="titanServices">MyUWO Portal</a></li>
+              <li><a href="http://www.portal.housing.uwosh.edu/" class="titanServices">MyUWO Portal</a></li>
               <li><a href="https://uwosh.collegiatelink.net/" class="titanServices">Student Clubs &amp; Orgs</a></li>
               <li><a href="https://uwosh.joinhandshake.com/login" class="titanServices">Handshake</a></li>
             </ul>
@@ -63,7 +63,7 @@
       <div class="logo-section">
         <div class="logoTitle">
           <div class="wordmark-wrapper">
-              <a href="#"><img src="images/wordmark.png" class="wordmark" atl="University of Wisconsin wordmark linking to home page"></a>
+              <a href="https://uwosh.edu/"><img src="images/wordmark.png" class="wordmark" atl="University of Wisconsin wordmark linking to home page"></a>
           </div>
           <div class="directory-title">UW Oshkosh Directory</div>
           <div class="quicklinks">
@@ -92,7 +92,7 @@
             <a class="nav-link active" id="search-pill" data-toggle="pill" href="#pills-search" role="pill">Search</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="update-pill" data-toggle="pill" href="#pills-update-information" role="pill">Updating your information</a>
+            <a class="nav-link" id="update-pill" data-toggle="pill" href="#pills-update-information" role="pill">Updating Your Information</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" id="print-pill" data-toggle="pill" href="#pills-printed-directory" role="pill">Printed Directory</a>
@@ -173,13 +173,13 @@
                   
 
           <div class="tab-pane" id="update-information" role="tabpanel" aria-labelledby="pills-update-information-tab">
-            <p>Students: <a href="http://www.uwosh.edu/registrar/titanweb/">Log into TitanWeb.</a></p>
-            <p>Employees:To updated your home address, visit the <a href="https://my.wisconsin.edu">My UWSystem portal</a>; to update your departmental address, contact Rachael Kruszka in Human Resources at <a style="text-decoration:underline;" href="mailto:kruszkar@uwosh.edu?subject=Directory%20Update">kruszkar@uwosh.edu</a>.</p>
-            <p>Under the Family Educational Rights and Privacy Act, students may have requested the nondisclosure of directory information. This means that the search may not reveal the names of selected students.</p>
+            <p>Students: <a style="text-decoration:underline;" href="http://www.uwosh.edu/registrar/titanweb/">Log into TitanWeb.</a></p>
+            <p>Employees: To update your home address, visit the <a style="text-decoration:underline;" href="https://my.wisconsin.edu">My UWSystem Portal</a>; to update your departmental address, contact Rachael Kruszka in Human Resources at <a style="text-decoration:underline;" href="mailto:kruszkar@uwosh.edu?subject=Directory%20Update">kruszkar@uwosh.edu</a>.</p>
+            <p>Under the Family Educational Rights and Privacy Act, students may request the nondisclosure of directory information. This means that the search may not reveal the names of select students.</p>
           </div>
           <div class="tab-pane" id="printed-directory" role="tabpanel" aria-labelledby="pills-printed-directory-tab">
             <p>When it comes to sustainable practices, there are not many institutions that do it better than UW Oshkosh. In accordance with the University’s Sustainability Plan, there is a strong, growing on-campus recycling and waste reduction program. With this in mind it has been decided to forego the printed directory and instead embrace new technology.</p>
-            <p>The online directory, also available in the <a style="text-decoration:underline;" href="https://uwosh.edu/umc/mobile-app/">University Mobile App</a>, is a quick and easy way to get the information you need quickly.</p>
+            <p>The online directory, also available on the <a style="text-decoration:underline;" href="https://uwosh.edu/umc/mobile-app/">University Mobile App</a>, is a quick and easy way to get the information you need quickly.</p>
           </div>
           <div class="tab-pane" id="retired-staff" role="tabpanel" aria-labelledby="pills-retired-staff-tab">
             <p><a href="http://www.uwosh.edu/directory/Directory_Retired_Staff_2014-15.pdf" style="text-decoration: underline">Directory of Retired Staff 2014-2015</a></p>
