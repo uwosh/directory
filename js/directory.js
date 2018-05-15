@@ -131,7 +131,7 @@ $(document).ready(function(){
         }else{
             department = $("#select-department-content").attr("value");
         }
-        
+
         if(group != "faculty-and-staff"){
             department = ""; 
         }
@@ -152,6 +152,7 @@ $(document).ready(function(){
     $('#directory').DataTable({
         "searching": false,
         "bDestroy": true,
+        "autoWidth": false,
         ajax: {
             url: '../search.php',
             dataSrc: '',
