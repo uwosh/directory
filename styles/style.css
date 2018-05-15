@@ -1185,6 +1185,11 @@ ul.titan-services li, ul li:hover ul.titan-services {
         top: 20px !important;
     }
 
+    #directory_wrapper{
+        overflow-y: hidden;
+        overflow-x: scroll;
+    }
+
 }
 
 .container{
@@ -2056,4 +2061,10 @@ a:hover{
      #bootstrap-pills1{
          height: 110px; 
      }
+ }
+ #directory_length > label > select{
+      width: 50px;
+ }
+ #directory_length > label{
+     width: 175px;
  }

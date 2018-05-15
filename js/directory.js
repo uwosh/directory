@@ -96,9 +96,10 @@ $(document).ready(function(){
    var firstname; 
    var lastname; 
     // displaying the results when the search button is clicked
-    $('#search-btn').click(function() {
-        makeTable();
 
+    $('#search-btn').click(function() {
+        //debugger;
+        checkVars();
         //if the search fields are empty do not display a table, instead display an error message
         if((department == "" && firstname == "" && lastname == "" )) {
             $('.results-row').css('display', 'none');
@@ -116,22 +117,30 @@ $(document).ready(function(){
             $('#errorName').css('display', 'none');
 
             $('.results-row').css('display', 'flex');
+            makeTable();
         }
     });
 
     // creating the datatable
+    function checkVars(){
+        group = $("#bootstrap-pills2 li .active").attr("value");
+        //var department = "";
+        
+        if(( $("#select-department-content").attr("value") == "Select a department" ) || ($("#select-department-content").attr("value") == "Select a Department")){
+           department = "";
+        }else{
+            department = $("#select-department-content").attr("value");
+        }
+        
+        if(group != "faculty-and-staff"){
+            department = ""; 
+        }
+        firstname = $("#first-name-search").val();
+        lastname = $("#last-name-search").val();
+        console.log("Group: " + group + "\nDepartment: " + department + "\nFirst Name: " + firstname + "\nLast Name: " + lastname);
     
-   function makeTable(){
-     group = $("#bootstrap-pills2 li .active").attr("value");
-    //var department = "";
-    if(( $("#select-department-content").attr("value") == "Select a department" ) || ($("#select-department-content").attr("value") == "Select a Department")){
-       department = "";
-    }else{
-        department = $("#select-department-content").attr("value");
     }
-    firstname = $("#first-name-search").val();
-    lastname = $("#last-name-search").val();
-    console.log("Group: " + group + "\nDepartment: " + department + "\nFirst Name: " + firstname + "\nLast Name: " + lastname);
+   function makeTable(){
 
     var data = {
         group: group,
