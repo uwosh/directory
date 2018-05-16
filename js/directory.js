@@ -153,6 +153,8 @@ $(document).ready(function(){
         "searching": false,
         "bDestroy": true,
         "autoWidth": false,
+        "aLengthMenu": [10,25,50],
+        "iDisplayLength": 10,
         ajax: {
             url: '../search.php',
             dataSrc: '',
