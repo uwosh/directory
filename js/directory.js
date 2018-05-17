@@ -102,6 +102,23 @@ $(document).ready(function(){
     $('#search-btn').click(function() {
         //debugger;
         checkVars();
+        checkEmpty();
+        
+    });
+    $( '#first-name-search' ).keypress(function( event ) {
+        if ( event.which == 13 ) {
+           checkVars();
+           checkEmpty();
+        }
+    });
+    $( '#last-name-search' ).keypress(function( event ) {
+        if ( event.which == 13 ) {
+           checkVars();
+           checkEmpty();
+        }
+    });
+
+    function checkEmpty(){
         //if the search fields are empty do not display a table, instead display an error message
         if((department == "" && firstname == "" && lastname == "" )) {
             $('.results-row').css('display', 'none');
@@ -121,7 +138,7 @@ $(document).ready(function(){
             $('.results-row').css('display', 'flex');
             makeTable();
         }
-    });
+    }
 
     // creating the datatable
     function checkVars(){
