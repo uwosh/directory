@@ -156,9 +156,9 @@ $(document).ready(function(){
         }
         firstname = $("#first-name-search").val();
         lastname = $("#last-name-search").val();
-        console.log("Group: " + group + "\nDepartment: " + department + "\nFirst Name: " + firstname + "\nLast Name: " + lastname);
-    
+        //console.log("Group: " + group + "\nDepartment: " + department + "\nFirst Name: " + firstname + "\nLast Name: " + lastname);
     }
+
    function makeTable(){
 
     var data = {
