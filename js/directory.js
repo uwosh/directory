@@ -120,7 +120,7 @@ $(document).ready(function(){
 
     function checkEmpty(){
         //if the search fields are empty do not display a table, instead display an error message
-        if((department == "" && firstname == "" && lastname == "" )) {
+        if((department == "" && firstname == "" && lastname == "" ) || firstname == " " || lastname == " ") {
             $('.results-row').css('display', 'none');
             if(group == "all" || group == "students"){
                 $('#errorNameDepartment').css('display', 'none');
