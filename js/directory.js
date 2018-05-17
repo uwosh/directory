@@ -19,6 +19,8 @@ $(document).ready(function(){
     $('#bootstrap-pills2 a').click(function() {
         $('#bootstrap-pills2 a').removeClass('active');
         $(this).addClass('active');
+        $('#errorName').css('display', 'none');
+        $('#errorNameDepartment').css('display', 'none');
     });
 
     $('#faculty-staff-pill').click(function() {
