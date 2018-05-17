@@ -251,7 +251,7 @@
                   800 Algoma Blvd.<br />
                   Oshkosh, WI 54901<br />
                 </a>
-                <a href="#">(920) 424-1234</a>
+                <a href="tel:9204241234">(920) 424-1234</a>
               </p> 
             </div> <!-- End of "address-phone" -->
           </div> <!-- End of "location-container" -->
