@@ -2062,9 +2062,17 @@ a:hover{
          height: 110px; 
      }
  }
+ /* show entries button */
  #directory_length > label > select{
-      width: 50px;
+      width: 70px;
+      height: 50px;
  }
  #directory_length > label{
      width: 175px;
+ }
+ .paginate_button :hover{
+    border-left: 1px solid black; 
+ }
+ .paginate_button.disabled {
+    display: none !important;
  }
