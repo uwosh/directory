@@ -2051,8 +2051,8 @@ a:hover{
  }
  /* show entries button */
  #directory_length > label > select{
-      width: 90px;
-      height: 60px;
+      width: 50px;
+      height: 40px;
  }
  #directory_length > label{
      width: 175px;
@@ -2071,6 +2071,6 @@ a:hover{
      font-size: 0px !important; 
  }
  #directory_length > label > select{
-     font-size: 18px!important;
+     font-size: 10px!important;
      float: left!important;
  }
