@@ -1022,13 +1022,6 @@ a:hover{
  .dataTables_wrapper .dataTables_paginate .paginate_button{
      padding: 0px; 
  }
- /*show entries*/
- #directory_length > label > select{
-     float: right;
-     width: 45px;
-     padding: 15px; 
-
- }
 
  /* UWO DIVI */
  @import url('https://fonts.googleapis.com/css?family=Open+Sans');
@@ -2047,12 +2040,6 @@ a:hover{
  .dataTables_wrapper .dataTables_paginate .paginate_button{
      padding: 0px; 
  }
- /*show entries*/
- #directory_length > label > select{
-     float: right;
-     width: 45px;
-     padding: 15px; 
-
  }
  
 
