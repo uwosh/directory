@@ -122,6 +122,7 @@
                   </div>
                   <input id="first-name-search" type="text" class="form-control" placeholder="Enter a first name" aria-label="Enter a first name" aria-describedby="basic-addon1">
                   <input id="last-name-search" type="text" class="form-control" placeholder="Enter a last name" aria-label="Enter a last name" aria-describedby="basic-addon1">
+
                 </div>
                 
                  <!--input department-->
