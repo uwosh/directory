@@ -172,8 +172,10 @@ $(document).ready(function(){
         "searching": false,
         "bDestroy": true,
         "autoWidth": false,
-        "aLengthMenu": [10,25,50],
-        "iDisplayLength": 10,
+        rowReorder: {
+            selector: 'td:nth-child(2)'
+        },
+        responsive: true,
         ajax: {
             url: '../search.php',
             dataSrc: '',

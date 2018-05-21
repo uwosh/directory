@@ -906,8 +906,8 @@ ul.titan-services li {
     display: inline-block;
 }
 .dropdown-menu{
-    overflow-y: scroll;
-    overflow-x: hidden;
+     overflow-y: scroll;
+    overflow-x: hidden; 
     height: 400px;
 }
 .hidden{
@@ -1185,10 +1185,10 @@ ul.titan-services li, ul li:hover ul.titan-services {
         top: 20px !important;
     }
 
-    #directory_wrapper{
+    /* #directory_wrapper{
         overflow-y: hidden;
         overflow-x: scroll;
-    }
+    } */
 
 }
 
@@ -2075,4 +2075,15 @@ a:hover{
  }
  .paginate_button.disabled {
     display: none !important;
+ }
+
+ #results-table-body > tr > td > ul > li{
+   display: block;
+ }
+ #directory_length > label{
+     font-size: 0px; 
+ }
+ #directory_length > label > select{
+     font-size: 18px;
+     float: left;
  }
