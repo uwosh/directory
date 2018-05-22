@@ -1,3 +1,4 @@
+<?php ini_set('display_errors', '1'); ?>
 <!doctype html>
 <html lang="eng">
   <head>
@@ -18,7 +19,8 @@
     <link rel="stylesheet" type="text/css" media="all" href="styles/nestedStyle.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
-   
+   <!-- Google reCAPTCHA -->
+   <script src='https://www.google.com/recaptcha/api.js'></script>
 
   </head>
   <header>
@@ -147,7 +149,10 @@
                   </select>
                 </div>
 
-                <button id="search-btn" type="button" class="btn btn-primary">Search</button>
+                <!-- reCAPTCHA -->
+                <div class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="6Lf1iFoUAAAAAMl6jqQOB3io4pflhlP0AVcj__LB"></div>
+
+                <button id="search-btn" type="button" class="btn btn-primary" disabled>Search</button>
                 <p id="errorName" style="color: red; display: none; ">Please enter a first and/or last name </p>
                 <p id="errorNameDepartment" style="color: red; display: none;"> Please enter a first and/or last name, or select a department</p>
               </div>
