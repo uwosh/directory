@@ -116,7 +116,7 @@ $(document).ready(function(){
         //debugger;
         checkVars();
         checkEmpty();
-        
+        grecaptcha.reset(); // resets the reCAPTCHA
     });
     //enter key => search
     $( '#first-name-search' ).keypress(function( event ) {
