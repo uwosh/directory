@@ -197,7 +197,6 @@ $(document).ready(function(){
                 },
                 { data: 'department' },
                 { data: 'mailstop' },
-                { data: 'zip' },
                 { data: 'building' },
                 { data: 'room' },
                 { data: 'phone' }

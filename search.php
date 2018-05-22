@@ -105,7 +105,7 @@ try {
 if($group == "all"){
   // get both UWO staff and students
   $stmt = $conn->prepare(
-    "SELECT username, lastname, firstname, mi, is_fac, is_stf, is_stu, is_oth, department, mailstop, zip, building, room, phone
+    "SELECT username, lastname, firstname, mi, is_fac, is_stf, is_stu, is_oth, department, mailstop,  building, room, phone
       FROM directory_public
       LEFT JOIN directory_public_dept USING (username)
       WHERE lastname LIKE '%' ? '%' AND firstname LIKE '%' ? '%' AND department LIKE '%' ? '%'
@@ -114,7 +114,7 @@ if($group == "all"){
 } else if($group == "faculty-and-staff"){
   // only get staff
   $stmt = $conn->prepare(
-    "SELECT username, lastname, firstname, mi, is_fac, is_stf, is_stu, is_oth, department, mailstop, zip, building, room, phone
+    "SELECT username, lastname, firstname, mi, is_fac, is_stf, is_stu, is_oth, department, mailstop,  building, room, phone
       FROM directory_public
       LEFT JOIN directory_public_dept USING (username)
       WHERE lastname LIKE '%' ? '%' AND firstname LIKE '%' ? '%' AND department LIKE '%' ? '%' AND ( is_fac = 'Y' OR is_stf = 'Y')
@@ -123,7 +123,7 @@ if($group == "all"){
 } else{
   // only get students
   $stmt = $conn->prepare(
-    "SELECT username, lastname, firstname, mi, is_fac, is_stf, is_stu, is_oth, department, mailstop, zip, building, room, phone
+    "SELECT username, lastname, firstname, mi, is_fac, is_stf, is_stu, is_oth, department, mailstop,  building, room, phone
       FROM directory_public
       LEFT JOIN directory_public_dept USING (username)
       WHERE lastname LIKE '%' ? '%' AND firstname LIKE '%' ? '%' AND department LIKE '%' ? '%' AND is_stu = 'Y'

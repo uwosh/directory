@@ -205,7 +205,6 @@
                       <th>E-mail</th>
                       <th>Department</th>
                       <th>Mailstop</th>
-                      <th>Plus 4 Zip</th>
                       <th>Building</th>
                       <th>Room</th>
                       <th>Phone</th>
@@ -219,7 +218,6 @@
                       <th>E-mail</th>
                       <th>Department</th>
                       <th>Mailstop</th>
-                      <th>Plus 4 Zip</th>
                       <th>Building</th>
                       <th>Room</th>
                       <th>Phone</th>
