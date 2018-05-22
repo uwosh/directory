@@ -2079,3 +2079,9 @@ a:hover{
  body > footer > div.middleFooter > div > div.location-container.mid-child > div.wismap > a > img{
      top: 0px;
  }
+
+ /* phone field */
+ #inputPhone{
+     margin-top: 15px;
+     margin-bottom: 15px;
+ }

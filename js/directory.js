@@ -25,10 +25,21 @@ $(document).ready(function(){
 
     $('#faculty-staff-pill').click(function() {
         $('#select-dept-dropdown').removeClass('hidden');
+        $('#inputName').removeClass('hidden');
+        $('#inputPhone').addClass('hidden');
     });
 
     $('#all-pill, #students-pill').click(function() {
         $('#select-dept-dropdown').addClass('hidden');
+        $('#inputName').removeClass('hidden');
+        $('#inputPhone').addClass('hidden');
+    });
+
+    $('#phone-pill').click(function() {
+        $('#select-dept-dropdown').addClass('hidden');
+        $('#inputName').addClass('hidden');
+
+        $('#inputPhone').removeClass('hidden');
     });
 
 

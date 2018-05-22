@@ -115,6 +115,9 @@
                   <li class="nav-item">
                     <a class="nav-link" id="students-pill" value="students" href="#">Students</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="phone-pill" value="search" href="#">Phone</a>
+                  </li>
                 </ul>
 
               <!--input names-->
@@ -124,7 +127,14 @@
                   </div>
                   <input id="first-name-search" type="text" class="form-control" placeholder="Enter a first name" aria-label="Enter a first name" aria-describedby="basic-addon1">
                   <input id="last-name-search" type="text" class="form-control" placeholder="Enter a last name" aria-label="Enter a last name" aria-describedby="basic-addon1">
+                </div>
 
+                <div id="inputPhone" class="input-group hidden">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="">Phone</span>
+                  </div>
+                  <input id="phone" type="number" class="form-control" placeholder="Enter the last 4 digits of a phone number ex. 3020" aria-label="Enter the last 4 digits of a phone number ex. 3020" aria-describedby="basic-addon1">
+                  
                 </div>
                 
                  <!--input department-->
@@ -199,7 +209,6 @@
                 <table id="directory" class="display table nowrap" style = "width:100%">
                 <thead>
                     <tr>
-                      
                       <th>First Name</th>
                       <th>Last Name</th>
                       <th>E-mail</th>
@@ -212,7 +221,6 @@
                   </thead>
                   <tfoot>
                     <tr>
-                       
                       <th>First Name</th>
                       <th>Last Name</th>
                       <th>E-mail</th>
