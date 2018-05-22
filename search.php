@@ -94,6 +94,7 @@ $group = $_POST["group"];
 $department = $_POST["department"];
 $firstname = $_POST["firstname"];
 $lastname = $_POST["lastname"];
+$phone = $_POST["phone"];
 
 // Create connection
 try {
@@ -111,6 +112,7 @@ if($group == "all"){
       WHERE lastname LIKE '%' ? '%' AND firstname LIKE '%' ? '%' AND department LIKE '%' ? '%'
       ORDER BY lastname, firstname"
   );
+  $stmt->execute(array($lastname, $firstname, $department));
 } else if($group == "faculty-and-staff"){
   // only get staff
   $stmt = $conn->prepare(
@@ -120,7 +122,8 @@ if($group == "all"){
       WHERE lastname LIKE '%' ? '%' AND firstname LIKE '%' ? '%' AND department LIKE '%' ? '%' AND ( is_fac = 'Y' OR is_stf = 'Y')
       ORDER BY lastname, firstname"
   );
-} else{
+  $stmt->execute(array($lastname, $firstname, $department));
+} else if ($group == "students"){
   // only get students
   $stmt = $conn->prepare(
     "SELECT username, lastname, firstname, mi, is_fac, is_stf, is_stu, is_oth, department, mailstop, building, room, phone
@@ -129,9 +132,22 @@ if($group == "all"){
       WHERE lastname LIKE '%' ? '%' AND firstname LIKE '%' ? '%' AND department LIKE '%' ? '%' AND is_stu = 'Y'
       ORDER BY lastname, firstname"
   );
+  $stmt->execute(array($lastname, $firstname, $department));
+}
+else{
+  //phone
+  $stmt = $conn->prepare(
+    "SELECT username, lastname, firstname, mi, is_fac, is_stf, is_stu, is_oth, department, mailstop, building, room, phone
+      FROM directory_public_dept
+      LEFT JOIN  directory_public USING (username)
+      WHERE phone = ?
+      ORDER BY lastname, firstname"
+  );
+  $stmt->execute(array($phone));
 }
 
-$stmt->execute(array($lastname, $firstname, $department));
+
+
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 echo json_encode($result);

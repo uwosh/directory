@@ -116,7 +116,7 @@
                     <a class="nav-link" id="students-pill" value="students" href="#">Students</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" id="phone-pill" value="search" href="#">Phone</a>
+                    <a class="nav-link" id="phone-pill" value="phone" href="#">Phone</a>
                   </li>
                 </ul>
 
@@ -167,6 +167,7 @@
 
                 <p id="errorName" style="color: red; display: none; ">Please enter a first and/or last name </p>
                 <p id="errorNameDepartment" style="color: red; display: none;"> Please enter a first and/or last name, or select a department</p>
+                <p id="errorNamePhone" style="color: red; display: none;"> Please enter 4 digits</p>
               </div>
               <!--
               <div class="col-md-4">

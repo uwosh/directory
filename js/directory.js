@@ -21,6 +21,7 @@ $(document).ready(function(){
         $(this).addClass('active');
         $('#errorName').css('display', 'none');
         $('#errorNameDepartment').css('display', 'none');
+        $('#errorNamePhone').css('display', 'none');
     });
 
     $('#faculty-staff-pill').click(function() {
@@ -108,6 +109,7 @@ $(document).ready(function(){
    var department; 
    var firstname; 
    var lastname; 
+   var phone;
     // displaying the results when the search button is clicked
 
     $('#search-btn').click(function() {
@@ -132,23 +134,53 @@ $(document).ready(function(){
 
     function checkEmpty(){
         //if the search fields are empty do not display a table, instead display an error message
-        if((department == "" && firstname == "" && lastname == "" ) || firstname == " " || lastname == " ") {
+        if((department == "" && firstname == "" && lastname == "" && phone == "") || firstname == " " || lastname == " ") {
             $('.results-row').css('display', 'none');
             if(group == "all" || group == "students"){
                 $('#errorNameDepartment').css('display', 'none');
+                $('#errorNamePhone').css('display', 'none');
+                
                 $('#errorName').css('display', 'flex');
             }
             else if(group == "faculty-and-staff"){
                 $('#errorName').css('display', 'none');
+                $('#errorNamePhone').css('display', 'none');
+
                 $('#errorNameDepartment').css('display', 'flex');
             }
         //if the search fields are not empty, display the table (and hide any error messages)
         }else{
-            $('#errorNameDepartment').css('display', 'none');
-            $('#errorName').css('display', 'none');
+             //make sure that phone is equal to 4 digits
+            if(group == 'phone'){
+                
 
-            $('.results-row').css('display', 'flex');
-            makeTable();
+                phone = $("#phone").val();
+                //if phone length isn't equal to 4
+                if(phone.length != 4){
+                    $('#errorNameDepartment').css('display', 'none');
+                    $('#errorName').css('display', 'none');
+                    $('#errorNamePhone').css('display', 'flex');
+                }
+                else{
+                //phone length is 4
+                    $('#errorNamePhone').css('display', 'none');
+                    $('#errorNameDepartment').css('display', 'none');
+                    $('#errorName').css('display', 'none');
+
+                    $('.results-row').css('display', 'flex');
+                    makeTable();
+                }
+            }
+            //not phone group at all 
+            else{
+                $('#errorNameDepartment').css('display', 'none');
+                $('#errorName').css('display', 'none');
+                $('#errorNamePhone').css('display', 'none');
+
+                $('.results-row').css('display', 'flex');
+                makeTable();
+
+            }
         }
     }
 
@@ -166,9 +198,17 @@ $(document).ready(function(){
         if(group != "faculty-and-staff"){
             department = ""; 
         }
-        firstname = $("#first-name-search").val();
-        lastname = $("#last-name-search").val();
-        //console.log("Group: " + group + "\nDepartment: " + department + "\nFirst Name: " + firstname + "\nLast Name: " + lastname);
+
+        if (group != 'phone'){
+            firstname = $("#first-name-search").val();
+            lastname = $("#last-name-search").val();
+            phone = "";
+        }
+        else{
+            firstname = "";
+            lastname = "";
+            phone = $("#phone").val();
+        }
     }
 
    function makeTable(){
@@ -180,8 +220,12 @@ $(document).ready(function(){
             department: department,
             firstname: firstname,
             lastname: lastname,
+            phone: phone
             // grecaptcharesponse: recaptcha_data
+
+            
         };
+        console.log("Group: " + group + "\nDepartment: " + department + "\nFirst Name: " + firstname + "\nLast Name: " + lastname + "\nPhone number: " + phone);
 
         $('#directory').DataTable({
             "searching": false,
@@ -204,13 +248,17 @@ $(document).ready(function(){
                 { data: 'username',
                     "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
                     $(nTd).html("<a href='mailto:"+oData.username+"@uwosh.edu'>"+oData.username+"@uwosh.edu</a>");
-                }
+                    }
                 },
                 { data: 'department' },
                 { data: 'mailstop' },
                 { data: 'building' },
                 { data: 'room' },
-                { data: 'phone' }
+                { data: 'phone',
+                    "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
+                    $(nTd).html("<a href='tel:'920424"+oData.phone+">920-424-"+oData.phone+"</a>");
+                    } 
+                }
             ]
         });
     };
