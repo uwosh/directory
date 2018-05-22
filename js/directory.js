@@ -161,7 +161,7 @@ $(document).ready(function(){
 
    function makeTable(){
 
-    var recaptcha_data = grecaptcha.getResponse();
+    // var recaptcha_data = grecaptcha.getResponse();
 
     var data = {
         group: group,
