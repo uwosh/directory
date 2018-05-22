@@ -2040,7 +2040,7 @@ a:hover{
  .dataTables_wrapper .dataTables_paginate .paginate_button{
      padding: 0px; 
  }
- }
+
  
 
  @media screen and (max-width:680px){
@@ -2048,6 +2048,9 @@ a:hover{
      #bootstrap-pills1{
          height: 110px; 
      }
+     #bootstrap-pills2{
+        height: 110px; 
+    }
  }
  /* show entries button */
  #directory_length > label > select{
