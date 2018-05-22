@@ -213,15 +213,15 @@ $(document).ready(function(){
 
    function makeTable(){
 
-        // var recaptcha_data = grecaptcha.getResponse();
+        var recaptcha_data = grecaptcha.getResponse();
 
         var data = {
             group: group,
             department: department,
             firstname: firstname,
             lastname: lastname,
-            phone: phone
-            // grecaptcharesponse: recaptcha_data
+            phone: phone,
+            grecaptcharesponse: recaptcha_data
 
             
         };
@@ -304,8 +304,8 @@ var randomInt = Math.floor((Math.random() * 3) + 0);
 
 document.getElementById("directory-background").src = randomBG[randomInt];
 
-// Callback function to allow the search button to be clickable.
-// function recaptchaCallback() {
-//     $('#search-btn').removeAttr('disabled');
-// };
+//Callback function to allow the search button to be clickable.
+function recaptchaCallback() {
+    $('#search-btn').removeAttr('disabled');
+};
 
