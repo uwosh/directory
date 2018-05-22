@@ -225,7 +225,7 @@ $(document).ready(function(){
 
             
         };
-        console.log("Group: " + group + "\nDepartment: " + department + "\nFirst Name: " + firstname + "\nLast Name: " + lastname + "\nPhone number: " + phone);
+        // console.log("Group: " + group + "\nDepartment: " + department + "\nFirst Name: " + firstname + "\nLast Name: " + lastname + "\nPhone number: " + phone);
 
         $('#directory').DataTable({
             "searching": false,
