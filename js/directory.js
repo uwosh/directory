@@ -105,6 +105,7 @@ $(document).ready(function(){
         checkEmpty();
         
     });
+    //enter key => search
     $( '#first-name-search' ).keypress(function( event ) {
         if ( event.which == 13 ) {
            checkVars();
@@ -161,48 +162,48 @@ $(document).ready(function(){
 
    function makeTable(){
 
-    var recaptcha_data = grecaptcha.getResponse();
+        // var recaptcha_data = grecaptcha.getResponse();
 
-    var data = {
-        group: group,
-        department: department,
-        firstname: firstname,
-        lastname: lastname,
-        grecaptcharesponse: recaptcha_data
+        var data = {
+            group: group,
+            department: department,
+            firstname: firstname,
+            lastname: lastname,
+            // grecaptcharesponse: recaptcha_data
+        };
+
+        $('#directory').DataTable({
+            "searching": false,
+            "bDestroy": true,
+            "autoWidth": false,
+            rowReorder: {
+                selector: 'td:nth-child(2)'
+            },
+            responsive: true,
+            ajax: {
+                url: '../search.php',
+                dataSrc: '',
+                type: "POST",
+                data: data
+            },
+            columns: [
+                
+                { data: 'firstname' },
+                { data: 'lastname' },
+                { data: 'username',
+                    "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
+                    $(nTd).html("<a href='mailto:"+oData.username+"@uwosh.edu'>"+oData.username+"@uwosh.edu</a>");
+                }
+                },
+                { data: 'department' },
+                { data: 'mailstop' },
+                { data: 'zip' },
+                { data: 'building' },
+                { data: 'room' },
+                { data: 'phone' }
+            ]
+        });
     };
-
-    $('#directory').DataTable({
-        "searching": false,
-        "bDestroy": true,
-        "autoWidth": false,
-        rowReorder: {
-            selector: 'td:nth-child(2)'
-        },
-        responsive: true,
-        ajax: {
-            url: 'search.php',
-            dataSrc: '',
-            type: "POST",
-            data: data
-        },
-        columns: [
-            
-            { data: 'firstname' },
-            { data: 'lastname' },
-            { data: 'username',
-                "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-                 $(nTd).html("<a href='mailto:"+oData.username+"@uwosh.edu'>"+oData.username+"@uwosh.edu</a>");
-            }
-             },
-            { data: 'department' },
-            { data: 'mailstop' },
-            { data: 'zip' },
-            { data: 'building' },
-            { data: 'room' },
-            { data: 'phone' }
-        ]
-    });
-   };
     
 });
 
@@ -246,6 +247,7 @@ var randomInt = Math.floor((Math.random() * 3) + 0);
 document.getElementById("directory-background").src = randomBG[randomInt];
 
 // Callback function to allow the search button to be clickable.
-function recaptchaCallback() {
-    $('#search-btn').removeAttr('disabled');
-};
+// function recaptchaCallback() {
+//     $('#search-btn').removeAttr('disabled');
+// };
+

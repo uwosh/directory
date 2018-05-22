@@ -2074,3 +2074,8 @@ a:hover{
      font-size: 10px!important;
      float: left!important;
  }
+ 
+ /* wi logo */
+ body > footer > div.middleFooter > div > div.location-container.mid-child > div.wismap > a > img{
+     top: 0px;
+ }
