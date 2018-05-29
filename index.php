@@ -27,6 +27,7 @@
   <header>
     <div class="wrapper">
       <div class="nav">
+        <!-- &#9776 unicode for ☰ -->
         <a class="toggle-nav">☰</a>
         <a class="toggle-quickLinks">☰</a>
         <ul class="top-nav" id="main-navigation">
