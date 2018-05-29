@@ -16,7 +16,7 @@
    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.dataTables.min.css"/>
 
     <!-- Additions of Styles -->
-    <link rel="stylesheet" type="text/css" media="all" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" media="all" href="styles/styleMin.css">
     <!-- <link rel="stylesheet" type="text/css" media="all" href="styles/nestedStyle.css"> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
@@ -28,8 +28,8 @@
     <div class="wrapper">
       <div class="nav">
         <!-- &#9776 unicode for ☰ -->
-        <a class="toggle-nav">☰</a>
-        <a class="toggle-quickLinks">☰</a>
+        <a class="toggle-nav">&#9776</a>
+        <a class="toggle-quickLinks">&#9776</a>
         <ul class="top-nav" id="main-navigation">
           <li><a href="http://www.uwosh.edu/about-uw-oshkosh/" class="top-nav-link">About</a></li>
           <li><a href="http://www.uwosh.edu/academics/" class="top-nav-link">Academics</a></li>
