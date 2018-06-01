@@ -16,10 +16,11 @@
    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.dataTables.min.css"/>
 
     <!-- Additions of Styles -->
-    <link rel="stylesheet" type="text/css" media="all" href="styles/styleMin.css">
+    <link rel="stylesheet" type="text/css" media="all" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" media="all" href="styles/mobileStyles.css">
     <!-- <link rel="stylesheet" type="text/css" media="all" href="styles/nestedStyle.css"> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-
+ 
    <!-- Google reCAPTCHA -->
    <script src='https://www.google.com/recaptcha/api.js'></script>
 
