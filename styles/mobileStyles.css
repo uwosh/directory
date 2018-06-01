@@ -3,6 +3,11 @@
         display: none;
     }
 }
+@media only screen and (min-width: 949px) {
+    .top-nav li:hover, .titan-services li:hover {
+        background: #333;
+    }
+}
 
 @media only screen and (max-width: 948px) {
     .titan-services {

@@ -24,13 +24,34 @@ ul li {
     text-decoration: none;
 }
 .nav {
+    position: relative;
     background: #444;
     height: 46px;
 }
-.nav, .top-nav {
-    position: relative;
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link, .btn-primary{
+    background-color: #666766;
+    border-color: #666766;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+    background-color: #666766;
+    color: white;
+    border-color: #666766;
+}
+.nav-tabs{
+    border-bottom: 1px solid #a2a1a2;
+}
+.nav-link{
+    border: 1px solid white;
+    margin-left: 5px; 
+    margin-right: 5px;
+}
+.nav-link:hover{
+    background-color:white;
+    color: #666766;
+    border-color: white;
 }
 .top-nav {
+    position: relative;
     font-size: 1rem;
     text-align: center;
     margin: 0 auto;
@@ -48,11 +69,7 @@ ul li {
     text-decoration: none;
     display: inline-block;
 }
-@media only screen and (min-width: 949px) {
-    .top-nav li:hover, .titan-services li:hover {
-        background: #333;
-    }
-}
+
 .top-nav li:hover a {
     color: white !important;
 }
@@ -89,6 +106,12 @@ ul.titan-services li, ul li:hover ul.titan-services {
 .wordmark {
     height: 100px;
 }
+
+.wordmark-wrapper {
+    float: left;
+    display: inline-block;
+}
+
 .logoTitle {
     margin-left: auto;
     margin-right: auto;
@@ -97,22 +120,42 @@ ul.titan-services li, ul li:hover ul.titan-services {
     height: 100%;
     position: relative;
 }
-.wordmark-wrapper, .directory-title {
-    display: inline-block;
-}
-.wordmark-wrapper {
-    float: left;
-}
 
 .container{
     max-width: 1200px;
     border-radius: 5px;
+    box-sizing: border-box;
+    margin-left: auto; 
+    margin-right: auto; 
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 50px; 
+    position: relative;
+    top: -150px;
+    background-color: white; 
 }
 #directory{
     width: 1200px;
 }
+#directory-background{
+    width: 100%;
+    position: relative;
+    top: -1px; 
+}
+#directory_length > label > select{
+    width: 50px;
+    height: 40px;
+    font-size: 10px!important;
+    float: left!important;
+}
+#directory_length > label{
+   width: 175px;
+   font-size: 0px !important;
+}
 
 .directory-title {
+    display: inline-block;
     font-size: 33px;
     font-weight: 600;
     margin-bottom: 15px;
@@ -136,9 +179,22 @@ ul.titan-services li, ul li:hover ul.titan-services {
     border-bottom: 1px solid #a2a1a2;
     height: 55px; 
 }
+#bootstrap-tabs, #bootstrap-pills1, #bootstrap-pills2 {
+    background-color: #E2E2E2;
+}
+
 #search-btn{
     margin-top: 10px;
+    display: block;
+    cursor: pointer;
 }
+#search > div:nth-child(1) > div.col-md-8{
+    box-sizing: border-box;
+}
+#search > div:nth-child(1) > div.col-md-4{
+    box-sizing: border-box;
+}
+
 .body-container .tabLinks {
     text-align: center;
     width: 100%;
@@ -176,9 +232,18 @@ ul.titan-services li, ul li:hover ul.titan-services {
     position: relative;
     top: -3px;
 }
+
 .tabContent {
     display: none;
 }
+.tabContent:not(.searchContent) {
+    width: 75.7%;
+    margin: 0 auto;
+}
+.tabContent.active {
+    display: inherit;
+}
+
 .printContent, .retireContent, .searchContent, .updateContent {
     max-width: 748px;
     height: 100%;
@@ -189,13 +254,7 @@ ul.titan-services li, ul li:hover ul.titan-services {
 .retireContent, .searchContent {
     top: -25px;
 }
-.tabContent:not(.searchContent) {
-    width: 75.7%;
-    margin: 0 auto;
-}
-.tabContent.active {
-    display: inherit;
-}
+
 .searchBy, .searchExample {
     width: 50%;
     display: inline-block;
@@ -203,19 +262,6 @@ ul.titan-services li, ul li:hover ul.titan-services {
 .searchBy a {
     text-decoration: none;
     color: #333;
-}
-.searchTab-navLinks {
-    background: #b0b0b0;
-    padding: 10px;
-    border-radius: 5px;
-    position: relative;
-    top: -102px;
-    right: 40px;
-}
-.department {
-    position: relative;
-    top: -110px;
-    display: none;
 }
 .searchBy input {
     position: relative;
@@ -229,6 +275,25 @@ ul.titan-services li, ul li:hover ul.titan-services {
     padding: 5px 10px;
     border-radius: 5px;
 }
+
+.searchTab-navLinks {
+    background: #b0b0b0;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    top: -102px;
+    right: 40px;
+}
+.department {
+    position: relative;
+    top: -110px;
+    display: none;
+}
+.department-select{
+    cursor: pointer;
+    display: inline-block;
+}
+
 .tabNav-white {
     background: #fff;
     border: 1px solid #b0b0b0;
@@ -236,6 +301,16 @@ ul.titan-services li, ul li:hover ul.titan-services {
 }
 footer p b {
     font-size: 1rem!important;
+}
+/* Where Excellence and Opportunity Meet. */
+body > footer > div.topFooter > span{
+    position: relative;
+    font-weight: 700; 
+    color: #444;
+}
+ /* wi logo */
+ body > footer > div.middleFooter > div > div.location-container.mid-child > div.wismap > a > img{
+    top: 0px;
 }
 .topFooter {
     text-align: center;
@@ -278,16 +353,13 @@ footer p b {
 .accredited-container, .emergency-p, .location-container, .mobile-emergency, .mobileEmergency-container, .resources-container {
     position: relative;
 }
-.address-phone, .wismap {
-    display: inline-block;
-    font-size: 1rem;
-}
 .wismap {
     width: 34%;
     vertical-align: top;
 }
-.address-phone {
-    width: 66%;
+.address-phone, .wismap {
+    display: inline-block;
+    font-size: 1rem;
 }
 .wismap img {
     -webkit-filter: grayscale(100%);
@@ -303,6 +375,19 @@ footer p b {
     -webkit-filter: none;
     filter: none;
 }
+
+.address-phone {
+    width: 66%;
+}
+
+.mobile-emergency {
+    top: 35px;
+    text-align: center;
+    width: 72px;
+}
+.mobile-emergency a:hover {
+    color: #fec424;
+}
 .mobile-emergency .fa-mobile-alt {
     font-size: 60px;
     position: relative;
@@ -314,26 +399,23 @@ footer p b {
 .mobile-emergency .fa-exclamation-triangle {
     font-size: 40px;
     position: relative;
+    top: 13px;
 }
 .mobile-emergency, .mobileEmergency-links {
     display: inline-block;
     font-size: 1rem;
 }
-.mobile-emergency {
-    text-align: center;
-    width: 72px;
-}
-.desaturate{
-    transition: all .6s ease;
-}
-.mobile-emergency a:hover {
-    color: #fec424;
-}
 .mobileEmergency-links {
     width: 80%;
 }
+
+.desaturate{
+    transition: all .6s ease;
+}
+
 .resources-container {
     position: relative;
+    top: -4px;
     width: 20%;
 }
 .resources-links li {
@@ -346,6 +428,7 @@ footer p b {
 }
 .accredited-container {
     width: 193px;
+    top: -48px;
 }
 .uwo-system {
     margin-left: 10px;
@@ -401,22 +484,9 @@ footer p b {
     color: #8032b0;
 }
 
-.mobile-emergency {
-    top: 35px;
-}
-.mobile-emergency .fa-exclamation-triangle {
-    top: 13px;
-}
-.resources-container {
-    top: -4px;
-}
 .emergency-p {
     top: 23px;
 }
-.accredited-container {
-    top: -48px;
-}
-
 
 .quicklinks {
     position: absolute;
@@ -436,29 +506,6 @@ footer p b {
     text-decoration: none;
 }
 
-
-/* @media screen and (max-width:775px) {
-     .tabLinks a: not(i) {
-        display: none;
-    }
-    .tabLinks i:hover {
-        cursor: pointer;
-    }
-    .tabLinksTitle {
-        padding: 13px 35px;
-    }
-    .retireTab, .updateTab {
-        padding: 10px 35px;
-    }
-} */
-
-
-#bootstrap-tabs, #bootstrap-pills1, #bootstrap-pills2 {
-    background-color: #E2E2E2;
-}
-.department-select{
-    display: inline-block;
-}
 .dropdown-menu{
      overflow-y: scroll;
     overflow-x: hidden; 
@@ -467,39 +514,10 @@ footer p b {
 .hidden{
     display: none;
 }
-.department-select{
-    cursor: pointer;
-}
-#search-btn{
-    display: block;
-    cursor: pointer;
-}
-#search > div:nth-child(1) > div.col-md-8{
-    box-sizing: border-box;
-}
-#search > div:nth-child(1) > div.col-md-4{
-    box-sizing: border-box;
-}
+
+
 .results-row{
     display: none;
-}
-
-.container{
-    box-sizing: border-box;
-    margin-left: auto; 
-    margin-right: auto; 
-    padding-top: 0px;
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-bottom: 50px; 
-    position: relative;
-    top: -150px;
-    background-color: white; 
-}
-#directory-background{
-    width: 100%;
-    position: relative;
-    top: -1px; 
 }
 
 #inputName{
@@ -517,28 +535,7 @@ footer p b {
     padding-top: 15px;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link, .btn-primary{
-    background-color: #666766;
-    border-color: #666766;
-}
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
-    background-color: #666766;
-    color: white;
-    border-color: #666766;
-}
-.nav-tabs{
-    border-bottom: 1px solid #a2a1a2;
-}
-.nav-link{
-    border: 1px solid white;
-    margin-left: 5px; 
-    margin-right: 5px;
-}
-.nav-link:hover{
-    background-color:white;
-    color: #666766;
-    border-color: white;
-}
+
 .btn-primary:hover{
     background-color:white;
     color: #666766;
@@ -562,49 +559,16 @@ a:hover{
  .dataTables_wrapper .dataTables_paginate .paginate_button{
      padding: 0px; 
  }
-
- /* UWO DIVI */
-
-/* Where Excellence and Opportunity Meet. */
-body > footer > div.topFooter > span{
-    position: relative;
-    font-weight: 700; 
-    color: #444;
-}
-
-
-
- /* show entries button */
- #directory_length > label > select{
-      width: 50px;
-      height: 40px;
- }
- #directory_length > label{
-     width: 175px;
- }
  .paginate_button :hover{
     border-left: 1px solid black; 
  }
  .paginate_button.disabled {
     display: none !important;
  }
-
  #results-table-body > tr > td > ul > li{
    display: block;
  }
- #directory_length > label{
-     font-size: 0px !important; 
- }
- #directory_length > label > select{
-     font-size: 10px!important;
-     float: left!important;
- }
  
- /* wi logo */
- body > footer > div.middleFooter > div > div.location-container.mid-child > div.wismap > a > img{
-     top: 0px;
- }
-
  /* phone field */
  #inputPhone{
      margin-top: 15px;
