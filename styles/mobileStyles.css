@@ -14,7 +14,6 @@
         display: block;
     }
 }
-/* max-width: 948px */
 @media only screen and (max-width: 1220px) {
     .quicklinks {
         display: none;
@@ -469,6 +468,15 @@
         left: -15px;
     }
 }
+@media screen and (max-width:680px){
+    
+    #bootstrap-pills1{
+        height: 110px; 
+    }
+    #bootstrap-pills2{
+       height: 110px; 
+   }
+}
 @media screen and (max-width:948px) and (max-width:610px) {
     .bottomFooter {
         height: 105px;
@@ -477,12 +485,11 @@
         float: left;
         padding-left: 8.5px;
     }
-}
-@media screen and (max-width:948px) and (max-width:590px) {
     .logo-section {
         height: 172px;
     }
 }
+
 @media screen and (max-width:775px) and (max-width:412px) {
     .uwoLogo {
         top: -120px;
@@ -510,13 +517,4 @@
     .socialMedia-footer a {
         padding-right: 13px;
     }
-}
-@media screen and (max-width:680px){
-    
-    #bootstrap-pills1{
-        height: 110px; 
-    }
-    #bootstrap-pills2{
-       height: 110px; 
-   }
 }
