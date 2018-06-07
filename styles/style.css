@@ -41,6 +41,7 @@ ul li {
     border-bottom: 1px solid #a2a1a2;
 }
 .nav-link{
+    color: #000; 
     border: 1px solid white;
     margin-left: 5px; 
     margin-right: 5px;
@@ -306,7 +307,7 @@ footer p b {
 body > footer > div.topFooter > span{
     position: relative;
     font-weight: 700; 
-    color: #444;
+    
 }
  /* wi logo */
  body > footer > div.middleFooter > div > div.location-container.mid-child > div.wismap > a > img{
@@ -314,7 +315,7 @@ body > footer > div.topFooter > span{
 }
 .topFooter {
     text-align: center;
-    color: #444;
+    color: #3b3b3b;
     background: #fec424;
     padding: 14.5px 0;
     font-size: 1rem;
@@ -328,7 +329,7 @@ body > footer > div.topFooter > span{
 }
 .middleFooter a {
     text-decoration: none;
-    color: #444;
+    color: #000;
 }
 .midFooter-container:after, .midFooter-container:before {
     content: "";
@@ -439,6 +440,9 @@ body > footer > div.topFooter > span{
 }
 .bottomFooter div {
     display: inline-block;
+}
+.bottomFooter div span{
+    color: #DBDBDB;
 }
 .copyright {
     float: left;
@@ -565,10 +569,14 @@ a:hover{
  .paginate_button.disabled {
     display: none !important;
  }
+
  #results-table-body > tr > td > ul > li{
    display: block;
  }
  
+ 
+
+
  /* phone field */
  #inputPhone{
      margin-top: 15px;

@@ -1,6 +1,6 @@
 <?php ini_set('display_errors', '1'); ?>
 <!doctype html>
-<html lang="eng">
+<html lang="en">
   <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>University of Wisconsin Oshkosh - Directory</title>
@@ -61,7 +61,7 @@
       <div class="logo-section">
         <div class="logoTitle">
           <div class="wordmark-wrapper">
-              <a href="https://uwosh.edu/"><img src="images/wordmark.png" class="wordmark" atl="University of Wisconsin wordmark linking to home page"></a>
+              <a href="https://uwosh.edu/"><img src="images/wordmark.png" class="wordmark" alt="University wordmark, link to homepage"></a>
           </div>
           <div class="directory-title">UW Oshkosh Directory</div>
           <div class="quicklinks">
@@ -87,16 +87,16 @@
         <div id="tabsContainer"><!--beginTabs-->
         <ul id="bootstrap-pills1" class="nav nav-pills" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active" id="search-pill" data-toggle="pill" href="#pills-search" role="pill">Search</a>
+            <a class="nav-link active" id="search-pill" data-toggle="pill" href="#pills-search" role="tab">Search</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="update-pill" data-toggle="pill" href="#pills-update-information" role="pill">Updating Your Information</a>
+            <a class="nav-link" id="update-pill" data-toggle="pill" href="#pills-update-information" role="tab">Updating Your Information</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="print-pill" data-toggle="pill" href="#pills-printed-directory" role="pill">Printed Directory</a>
+            <a class="nav-link" id="print-pill" data-toggle="pill" href="#pills-printed-directory" role="tab">Printed Directory</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="retired-pill" data-toggle="pill" href="#pills-retired-staff" role="pill">Retired Staff</a>
+            <a class="nav-link" id="retired-pill" data-toggle="pill" href="#pills-retired-staff" role="tab">Retired Staff</a>
           </li>
         </ul>
         
@@ -104,22 +104,22 @@
 
 
         <div class="tab-content">
-          <div class="tab-pane active" id="search" role="tabpanel" aria-labelledby="pills-search-tab">
+          <div class="tab-pane active" id="search" role="tabpanel" aria-labelledby="search">
             <div class="row">
               <div class="col-md-10 mx-auto">
 
-                <ul id="bootstrap-pills2" class="nav nav-pills">
+                <ul id="bootstrap-pills2" class="nav nav-pills" role="tablist">
                   <li class="nav-item">
-                    <a class="nav-link active" id="all-pill" value="all" href="#">All</a>
+                    <a class="nav-link active" id="all-pill" value="all" href="#" role="tab">All</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" id="faculty-staff-pill" value="faculty-and-staff" href="#">Faculty and Staff</a>
+                    <a class="nav-link" id="faculty-staff-pill" value="faculty-and-staff" href="#" role="tab">Faculty and Staff</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" id="students-pill" value="students" href="#">Students</a>
+                    <a class="nav-link" id="students-pill" value="students" href="#" role="tab">Students</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" id="phone-pill" value="phone" href="#">Phone</a>
+                    <a class="nav-link" id="phone-pill" value="phone" href="#" role="tab">Phone</a>
                   </li>
                 </ul>
 
@@ -128,8 +128,8 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="">Name</span>
                   </div>
-                  <input id="first-name-search" type="text" class="form-control" placeholder="Enter a first name" aria-label="Enter a first name" aria-describedby="basic-addon1">
-                  <input id="last-name-search" type="text" class="form-control" placeholder="Enter a last name" aria-label="Enter a last name" aria-describedby="basic-addon1">
+                  <input id="first-name-search" type="text" class="form-control" placeholder="Enter a first name" aria-label="Enter a first name" aria-describedby="first-name-search">
+                  <input id="last-name-search" type="text" class="form-control" placeholder="Enter a last name" aria-label="Enter a last name" aria-describedby="last-name-search">
                 </div>
 
                 <div id="inputPhone" class="input-group hidden">
@@ -269,15 +269,15 @@
           <div class="mobileEmergency-container mid-child">
             <div class="mobile-emergency">
               <div>
-                <a href="https://umc.uwosh.edu/mobile-app/"><i class="fa fa-mobile-alt desaturate" aria-hidden="true"></i></a>
+                <a href="https://umc.uwosh.edu/mobile-app/" aria-label="mobile app"><i class="fa fa-mobile-alt desaturate" aria-hidden="true"></i></a>
               </div>
               <div>  
-                <a href="http://emergency.uwosh.edu/"><i class="fa fa-exclamation-triangle desaturate" aria-hidden="true"></i></a>
+                <a href="http://emergency.uwosh.edu/" aria-label="emergency"><i class="fa fa-exclamation-triangle desaturate" aria-hidden="true"></i></a>
               </div>
             </div> <!-- End of "mobile-emergency" -->
             <div class="mobileEmergency-links">
               <p class="mobileEmergency-title"><b>Quick Links</b></p>
-              <p><a href="https://umc.uwosh.edu/mobile-app/">Download UW Oshkosh's Mobile App</a>
+              <p><a href="https://umc.uwosh.edu/mobile-app/">Download UW Oshkosh's Mobile App</a></p>
               <p><a href="http://emergency.uwosh.edu/" class="emergency-p">Emergency and Safety Information</a></p>
             </div> <!-- End of "mobileEmergency-links" -->
           </div> <!-- End of mobileEmergency-container" -->
@@ -294,8 +294,8 @@
           </div> <!-- End of "resources-container" -->
           <div class="accredited-container mid-child">
             <div class="accredited-uwo">
-                <a href="http://www.hlcommission.org/?option=com_directory&Action=ShowBasic&instid=2030" target="_blank"><img src="images/footer/hlc.png" class="accredited"></a>
-                <a href="https://www.wisconsin.edu/" target="_blank"><img src="images/footer/uw-system.png" class="uwo-system"></a>
+                <a href="http://www.hlcommission.org/?option=com_directory&Action=ShowBasic&instid=2030" target="_blank"><img src="images/footer/hlc.png" class="accredited" alt="accreditation image"></a>
+                <a href="https://www.wisconsin.edu/" target="_blank"><img src="images/footer/uw-system.png" class="uwo-system" alt="uw system image"></a>
             </div> <!-- End of "accredted-uwo" -->
           </div> <!-- End of "accredited-container" -->
         </div> <!-- End of "midFooter-container" -->
@@ -305,13 +305,13 @@
           <span>&copy;<script>document.write(new Date().getFullYear())</script> UW Board of Regents</span>
         </div> <!-- End of "copyright" -->
         <div id="footer-social">
-            <a href="https://www.facebook.com/uwoshkosh" target="_blank" class="footerFacebook"><i class="fab fa-facebook-f fa-2x desaturate" alt="Facebook logo"></i></a>
-						<a href="https://twitter.com/uwoshkosh" target="_blank" class="footerTwitter"><i class="fab fa-twitter fa-2x desaturate"></i></a>
-						<a href="http://instagram.com/uwoshkosh" target="_blank" class="footerInstagram"><i class="fab fa-instagram fa-2x desaturate" aria-hidden="true" alt="Instagram logo"></i></a>
-						<a href="http://www.youtube.com/uwosh" target="_blank" class="footerYouTube"><i class="fab fa-youtube fa-2x desaturate" aria-hidden="true" alt="YouTube logo"></i></a>
-						<a href="http://www.linkedin.com/edu/school?id=19693" target="_blank" class="footerLinkedIn"><i class="fab fa-linkedin fa-2x desaturate" aria-hidden="true" alt="LinkedIn logo"></i></a>
-						<a href="http://www.pinterest.com/uwoshkosh/" target="_blank" class="footerPinterest"><i class="fab fa-pinterest-p fa-2x desaturate" aria-hidden="true" alt="Pinterest logo"></i></a>
-						<a href="http://www.flickr.com/photos/uwoshkosh/sets/" target="_blank" class="footerFlickr"><i class="fab fa-flickr fa-2x desaturate" aria-hidden="true" alt="Flickr logo"></i></a>
+            <a href="https://www.facebook.com/uwoshkosh" target="_blank" class="footerFacebook" aria-label="facebook"><i class="fab fa-facebook-f fa-2x desaturate" alt="Facebook logo"></i></a>
+						<a href="https://twitter.com/uwoshkosh" target="_blank" class="footerTwitter" aria-label="twitter"><i class="fab fa-twitter fa-2x desaturate"></i></a>
+						<a href="http://instagram.com/uwoshkosh" target="_blank" class="footerInstagram" aria-label="instagram"><i class="fab fa-instagram fa-2x desaturate" aria-hidden="true" alt="Instagram logo"></i></a>
+						<a href="http://www.youtube.com/uwosh" target="_blank" class="footerYouTube" aria-label="youtube"><i class="fab fa-youtube fa-2x desaturate" aria-hidden="true" alt="YouTube logo"></i></a>
+						<a href="http://www.linkedin.com/edu/school?id=19693" target="_blank" class="footerLinkedIn" aria-label="linkedIn"><i class="fab fa-linkedin fa-2x desaturate" aria-hidden="true" alt="LinkedIn logo"></i></a>
+						<a href="http://www.pinterest.com/uwoshkosh/" target="_blank" class="footerPinterest" aria-label="pinterest"><i class="fab fa-pinterest-p fa-2x desaturate" aria-hidden="true" alt="Pinterest logo"></i></a>
+						<a href="http://www.flickr.com/photos/uwoshkosh/sets/" target="_blank" class="footerFlickr" aria-label="flickr"><i class="fab fa-flickr fa-2x desaturate" aria-hidden="true" alt="Flickr logo"></i></a>
 					</div>
       </div> <!-- End of "bottomContainer" -->
     </footer>
