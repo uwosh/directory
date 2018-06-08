@@ -298,7 +298,7 @@ $(window).resize(function(){
     setMainDim();
 });
 
-var randomBG = ["images/background/horizon1.jpg", "images/background/awcc1.jpg", "images/background/aroundCampus1.jpg"];
+var randomBG = ["images/background/horizon1.jpf", "images/background/awcc1.jpf", "images/background/aroundCampus1.jpf"];
 //0, 1, 2
 var randomInt = Math.floor((Math.random() * 3) + 0);
 
