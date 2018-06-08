@@ -189,8 +189,8 @@
 
           <div class="tab-pane" id="update-information" role="tabpanel" aria-labelledby="pills-update-information-tab">
             <p>Students: <a style="text-decoration:underline;" href="http://www.uwosh.edu/registrar/titanweb/">Log into TitanWeb.</a></p>
-            <p>Employees: To update your home address, visit the <a style="text-decoration:underline;" href="https://my.wisconsin.edu">My UWSystem Portal</a>; to update your departmental address, contact Rachael Kruszka in Human Resources at <a style="text-decoration:underline;" href="mailto:kruszkar@uwosh.edu?subject=Directory%20Update">kruszkar@uwosh.edu</a>.</p>
-            <p>Under the Family Educational Rights and Privacy Act, students may request the nondisclosure of directory information. This means that the search may not reveal the names of select students.</p>
+            <p>Employees: To update your home address, visit the <a style="text-decoration:underline;" href="https://my.wisconsin.edu">My UWSystem Portal</a>; to update your departmental address, contact Mindy Roever in Human Resources at <a style="text-decoration:underline;" href="mailto:hroffice@uwosh.edu?subject=Directory%20Update">hroffice@uwosh.edu</a>.</p>
+            <p>Under the Family Educational Rights and Privacy Act, students may request the nondisclosure of directory information. This means that the search may not reveal the names of select students.</p>  
           </div>
           <div class="tab-pane" id="printed-directory" role="tabpanel" aria-labelledby="pills-printed-directory-tab">
             <p>When it comes to sustainable practices, there are not many institutions that do it better than UW Oshkosh. In accordance with the University’s Sustainability Plan, there is a strong, growing on-campus recycling and waste reduction program. With this in mind it has been decided to forego the printed directory and instead embrace new technology.</p>
