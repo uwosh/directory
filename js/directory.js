@@ -236,7 +236,7 @@ $(document).ready(function(){
             },
             responsive: true,
             ajax: {
-                url: '../search.php',
+                url: 'search.php',
                 dataSrc: '',
                 type: "POST",
                 data: data
@@ -256,7 +256,9 @@ $(document).ready(function(){
                 { data: 'room' },
                 { data: 'phone',
                     "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-                    $(nTd).html("<a href='tel:'920424"+oData.phone+">920-424-"+oData.phone+"</a>");
+                        if (oData.phone != null) {
+                            $(nTd).html("<a href='tel:'920424"+oData.phone+">920-424-"+oData.phone+"</a>");
+                        }
                     } 
                 }
             ]
@@ -298,7 +300,7 @@ $(window).resize(function(){
     setMainDim();
 });
 
-var randomBG = ["images/background/horizon1.jpf", "images/background/awcc1.jpf", "images/background/aroundCampus1.jpf"];
+var randomBG = ["images/background/horizon1.jpg", "images/background/awcc1.jpg", "images/background/aroundCampus1.jpg"];
 //0, 1, 2
 var randomInt = Math.floor((Math.random() * 3) + 0);
 
