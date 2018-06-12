@@ -222,10 +222,40 @@ $(document).ready(function(){
             lastname: lastname,
             phone: phone,
             grecaptcharesponse: recaptcha_data
-
-            
         };
-        // console.log("Group: " + group + "\nDepartment: " + department + "\nFirst Name: " + firstname + "\nLast Name: " + lastname + "\nPhone number: " + phone);
+
+        if(department != ""){
+
+            $('.department-row').css('display', 'flex');
+
+            $('#department-directory').DataTable({
+                "searching": false,
+                "paging": false,
+                "bDestroy": true,
+                "autoWidth": false,
+                rowReorder: {
+                    selector: 'td:nth-child(2)'
+                },
+                responsive: true,
+                ajax: {
+                    url: 'department-search.php',
+                    dataSrc: '',
+                    type: "POST",
+                    data: data
+                },
+                columns: [
+                    { data: 'description' },
+                    { data: 'phone',
+                        "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
+                            if (oData.phone != null) {
+                                $(nTd).html("<a href='tel:'920424"+oData.phone+">920-424-"+oData.phone+"</a>");
+                            }
+                        }
+                    },
+                    { data: 'location' }
+                ]
+            });
+        }
 
         $('#directory').DataTable({
             "searching": false,

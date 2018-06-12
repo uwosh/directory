@@ -220,44 +220,64 @@
 
       </div><!--endtabs-->
 
-                        <!--beginResults-->
+      <!--beginResults-->
       <div id="resultsContainer" >
+        <div class="row department-row">
+          <div class="col-md-12">
+            <h3>Department Info</h3>
+            <table id="department-directory" class="display table nowrap" style="width:100%">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Campus Phone</th>
+                  <th>Office</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>Item</th>
+                  <th>Campus Phone</th>
+                  <th>Office</th>
+                </tr>
+              </tfoot>
+              <tbody id="department-results-table-body"></tbody>
+            </table>
+          </div>
+        </div>
         <div class="row results-row">
-              <div class="col-md-12">
-                <h3>Results</h3>
-                <table id="directory" class="display table nowrap" style = "width:100%">
-                <thead>
-                    <tr>
-                      <th>First Name</th>
-                      <th>Last Name</th>
-                      <th>E-mail</th>
-                      <th>Department</th>
-                      <th>Mailstop</th>
-                      <th>Building</th>
-                      <th>Room</th>
-                      <th>Phone</th>
-                    </tr>
-                  </thead>
-                  <tfoot>
-                    <tr>
-                      <th>First Name</th>
-                      <th>Last Name</th>
-                      <th>E-mail</th>
-                      <th>Department</th>
-                      <th>Mailstop</th>
-                      <th>Building</th>
-                      <th>Room</th>
-                      <th>Phone</th>
-                    </tr>
-                  </tfoot>
-                  <tbody id="results-table-body">
-                  </tbody>
-                </table>
-              </div>
-            </div>
-        </div> <!--endResults-->
-
-      </div> <!-- end Fullcontainer -->
+          <div class="col-md-12">
+            <h3>People Results</h3>
+            <table id="directory" class="display table nowrap" style="width:100%">
+              <thead>
+                <tr>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>E-mail</th>
+                  <th>Department</th>
+                  <th>Mailstop</th>
+                  <th>Building</th>
+                  <th>Room</th>
+                  <th>Phone</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>E-mail</th>
+                  <th>Department</th>
+                  <th>Mailstop</th>
+                  <th>Building</th>
+                  <th>Room</th>
+                  <th>Phone</th>
+                </tr>
+              </tfoot>
+              <tbody id="results-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div> <!--endResults-->
+    </div> <!-- end Fullcontainer -->
     </main>
     <footer>
       <div class="topFooter">

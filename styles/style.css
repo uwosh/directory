@@ -524,6 +524,11 @@ body > footer > div.topFooter > span{
     display: none;
 }
 
+.department-row{
+    display: none;
+    margin-bottom: 30px;
+}
+
 #inputName{
     margin-top: 15px;
     margin-bottom: 15px;
