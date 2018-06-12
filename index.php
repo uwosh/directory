@@ -180,7 +180,7 @@
                 <!-- reCAPTCHA -->
                 <div class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="6Lf1iFoUAAAAAMl6jqQOB3io4pflhlP0AVcj__LB"></div>
 
-                <button id="search-btn" type="button" class="btn btn-primary" disabled>Search</button>
+                <a href="#resultsContainer"><button id="search-btn" type="button" class="btn btn-primary" disabled>Search</button></a>
                 <!-- <button id="search-btn" type="button" class="btn btn-primary">Search</button> -->
 
                 <p id="errorName" style="color: red; display: none; ">Please enter a first and/or last name </p>
