@@ -3,23 +3,38 @@
 <html lang="en">
   <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>University of Wisconsin Oshkosh - Directory</title>
+  <title>University of Wisconsin Oshkosh - Directory</title>
 
-<!-- Including Bootstrap CSS -->
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicons/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="images/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="images/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="images/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="images/favicons/apple-touch-icon-152x152.png">
+  <meta name="apple-mobile-web-app-title" content="UW Oshkosh">
+  <link rel="icon" type="image/png" href="images/favicons/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="images/favicons/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="images/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="images/favicons/favicon-32x32.png" sizes="32x32">
 
-    <!-- Including datatables styles -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/>
-    <!-- datatables responsive  --> 
-   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/rowreorder/1.2.3/css/rowReorder.dataTables.min.css"/>
-   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.dataTables.min.css"/>
+  <!-- Including Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!-- Additions of Styles -->
-    <link rel="stylesheet" type="text/css" media="all" href="styles/style.css">
-    <link rel="stylesheet" type="text/css" media="all" href="styles/mobileStyles.css">
-    <!-- <link rel="stylesheet" type="text/css" media="all" href="styles/nestedStyle.css"> -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <!-- Including datatables styles -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/>
+  <!-- datatables responsive  --> 
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/rowreorder/1.2.3/css/rowReorder.dataTables.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.dataTables.min.css"/>
+
+  <!-- Additions of Styles -->
+  <link rel="stylesheet" type="text/css" media="all" href="styles/style.css">
+  <link rel="stylesheet" type="text/css" media="all" href="styles/mobileStyles.css">
+  <!-- <link rel="stylesheet" type="text/css" media="all" href="styles/nestedStyle.css"> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
  
    <!-- Google reCAPTCHA -->
    <script src='https://www.google.com/recaptcha/api.js'></script>
@@ -165,7 +180,7 @@
                 <!-- reCAPTCHA -->
                 <div class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="6Lf1iFoUAAAAAMl6jqQOB3io4pflhlP0AVcj__LB"></div>
 
-                <button id="search-btn" type="button" class="btn btn-primary" disabled>Search</button>
+                <a href="#resultsContainer"><button id="search-btn" type="button" class="btn btn-primary" disabled>Search</button></a>
                 <!-- <button id="search-btn" type="button" class="btn btn-primary">Search</button> -->
 
                 <p id="errorName" style="color: red; display: none; ">Please enter a first and/or last name </p>
@@ -189,15 +204,15 @@
 
           <div class="tab-pane" id="update-information" role="tabpanel" aria-labelledby="pills-update-information-tab">
             <p>Students: <a style="text-decoration:underline;" href="http://www.uwosh.edu/registrar/titanweb/">Log into TitanWeb.</a></p>
-            <p>Employees: To update your home address, visit the <a style="text-decoration:underline;" href="https://my.wisconsin.edu">My UWSystem Portal</a>; to update your departmental address, contact Rachael Kruszka in Human Resources at <a style="text-decoration:underline;" href="mailto:kruszkar@uwosh.edu?subject=Directory%20Update">kruszkar@uwosh.edu</a>.</p>
-            <p>Under the Family Educational Rights and Privacy Act, students may request the nondisclosure of directory information. This means that the search may not reveal the names of select students.</p>
+            <p>Employees: To update your home address, visit the <a style="text-decoration:underline;" href="https://my.wisconsin.edu">My UWSystem Portal</a>; to update your departmental address, contact Mindy Roever in Human Resources at <a style="text-decoration:underline;" href="mailto:hroffice@uwosh.edu?subject=Directory%20Update">hroffice@uwosh.edu</a>.</p>
+            <p>Under the Family Educational Rights and Privacy Act, students may request the nondisclosure of directory information. This means that the search may not reveal the names of select students.</p>  
           </div>
           <div class="tab-pane" id="printed-directory" role="tabpanel" aria-labelledby="pills-printed-directory-tab">
-            <p>When it comes to sustainable practices, there are not many institutions that do it better than UW Oshkosh. In accordance with the University’s Sustainability Plan, there is a strong, growing on-campus recycling and waste reduction program. With this in mind it has been decided to forego the printed directory and instead embrace new technology.</p>
+            <p>When it comes to sustainable practices, there are not many institutions that do it better than UW Oshkosh. In accordance with the University's Sustainability Plan, there is a strong, growing on-campus recycling and waste reduction program. With this in mind it has been decided to forego the printed directory and instead embrace new technology.</p>
             <p>The online directory, also available on the <a style="text-decoration:underline;" href="https://uwosh.edu/umc/mobile-app/">University Mobile App</a>, is a quick and easy way to get the information you need quickly.</p>
           </div>
           <div class="tab-pane" id="retired-staff" role="tabpanel" aria-labelledby="pills-retired-staff-tab">
-            <p><a href="http://www.uwosh.edu/directory/Directory_Retired_Staff_2014-15.pdf" style="text-decoration: underline">Directory of Retired Staff 2014-2015</a></p>
+            <p><a href="https://www.uwosh.edu/directory/Directory_Retired_Staff_2014-15.pdf" style="text-decoration: underline">Directory of Retired Staff 2014-2015</a></p>
           </div>
         </div>
       
