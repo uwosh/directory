@@ -160,20 +160,8 @@
                   <div class="input-group-prepend">
                     <label  class="input-group-text" for="select-department-content">Department</label>
                   </div>
-                  <select id="select-department-content" value="Select a department" class="custom-select"   >
-                  <option selected>Select a Department</option>
-
-                    <?php
-                      
-                        $depts = file('depts.txt');
-                        foreach( $depts as $dept ) {
-                          $dept = trim($dept);
-                          print "<option class='select-department'>";
-                          print trim(preg_replace('/&/', '&amp;', $dept)) . "</option>\n";
-                        }
-                      
-                      ?>
-                    
+                  <select id="select-department-content" value="Select a department" class="custom-select">
+                    <!-- Departments will be automatically loaded here with the AJAX call in fetch-departments.js -->
                   </select>
                 </div>
 
@@ -360,6 +348,7 @@
     <script type="text/javascript" src="https://cdn.datatables.net/rowreorder/1.2.3/js/dataTables.rowReorder.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.1/js/dataTables.responsive.min.js"></script>
 
+    <script type="text/javascript" src="js/fetch-departments.js"></script>
     <script type="text/javascript" src="js/directory.js"></script>
 
     <!-- Google Analytics Code -->

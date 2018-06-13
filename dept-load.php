@@ -9,16 +9,19 @@ try {
     echo "Connection failed: " + $e->getMessage();
 }
 
+// Get the data from the DB
 $stmt = $conn->prepare(
     "SELECT DISTINCT dept FROM directory_geninfo ORDER BY dept"
 );
 $stmt->execute();
-
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+// Parse the data
 $departments = array();
 foreach($results as $item){
     array_push($departments, $item["dept"]);
 }
+
+// Return the data to AJAX
 echo json_encode($departments);
 ?>
