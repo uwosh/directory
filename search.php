@@ -69,6 +69,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               ORDER BY lastname, firstname"
           );
           $stmt->execute(array($lastname, $firstname, $department));
+
+          // get the department information as well
+          $dept_stmt = $conn->prepare(
+            "SELECT description, phone, location FROM directory_geninfo WHERE dept LIKE ? ORDER BY description"
+          );
+          $dept_stmt->execute(array($department));
         } else if ($group == "students"){
           // only get students
           $stmt = $conn->prepare(
@@ -92,9 +98,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           $stmt->execute(array($phone));
         }
 
-
-
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $persons_result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $dept_result = $dept_stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result = array("department_result"=>$dept_result, "persons_result"=>$persons_result);
 
         echo json_encode($result);
     }
