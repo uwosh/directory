@@ -1,13 +1,27 @@
-#!/usr/bin/php
 <?php
+
 require_once("config.php");
-$db = mysqli_init();
-$db->real_connect($hostname, $user, $password, $database);
-$query = $db->prepare ("select distinct dept from directory_geninfo order by dept");
-$query->execute();
-$query->bind_result($dept);
-while($query->fetch()){
-    print $dept . "\n";
+
+// Create connection
+try {
+    $conn = new PDO( "mysql:host=$hostname;port=$port;dbname=$database", $user, $password );
+} catch( PDOException $e ) {
+    echo "Connection failed: " + $e->getMessage();
 }
 
+// Get the data from the DB
+$stmt = $conn->prepare(
+    "SELECT DISTINCT dept FROM directory_geninfo ORDER BY dept"
+);
+$stmt->execute();
+$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Parse the data
+$departments = array();
+foreach($results as $item){
+    array_push($departments, $item["dept"]);
+}
+
+// Return the data to AJAX
+echo json_encode($departments);
 ?>

@@ -151,7 +151,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="">Phone</span>
                   </div>
-                  <input id="phone" type="number" class="form-control" placeholder="Enter the last 4 digits of a campus phone number ex. 3020" aria-label="Enter the last 4 digits of a campus phone number ex. 3020" aria-describedby="basic-addon1">
+                  <input id="phone" type="number" class="form-control" placeholder="Enter the last 4 digits of a campus phone number ex. 1234" aria-label="Enter the last 4 digits of a campus phone number ex. 3020" aria-describedby="basic-addon1">
                   
                 </div>
                 
@@ -160,20 +160,8 @@
                   <div class="input-group-prepend">
                     <label  class="input-group-text" for="select-department-content">Department</label>
                   </div>
-                  <select id="select-department-content" value="Select a department" class="custom-select"   >
-                  <option selected>Select a Department</option>
-
-                    <?php
-                      
-                        $depts = file('depts.txt');
-                        foreach( $depts as $dept ) {
-                          $dept = trim($dept);
-                          print "<option class='select-department'>";
-                          print trim(preg_replace('/&/', '&amp;', $dept)) . "</option>\n";
-                        }
-                      
-                      ?>
-                    
+                  <select id="select-department-content" value="Select a department" class="custom-select">
+                    <!-- Departments will be automatically loaded here with the AJAX call in fetch-departments.js -->
                   </select>
                 </div>
 
@@ -220,44 +208,64 @@
 
       </div><!--endtabs-->
 
-                        <!--beginResults-->
+      <!--beginResults-->
       <div id="resultsContainer" >
+        <div class="row department-row">
+          <div class="col-md-12">
+            <h3>Department Info</h3>
+            <table id="department-directory" class="display table nowrap" style="width:100%">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Campus Phone</th>
+                  <th>Office</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>Item</th>
+                  <th>Campus Phone</th>
+                  <th>Office</th>
+                </tr>
+              </tfoot>
+              <tbody id="department-results-table-body"></tbody>
+            </table>
+          </div>
+        </div>
         <div class="row results-row">
-              <div class="col-md-12">
-                <h3>Results</h3>
-                <table id="directory" class="display table nowrap" style = "width:100%">
-                <thead>
-                    <tr>
-                      <th>First Name</th>
-                      <th>Last Name</th>
-                      <th>E-mail</th>
-                      <th>Department</th>
-                      <th>Mailstop</th>
-                      <th>Building</th>
-                      <th>Room</th>
-                      <th>Phone</th>
-                    </tr>
-                  </thead>
-                  <tfoot>
-                    <tr>
-                      <th>First Name</th>
-                      <th>Last Name</th>
-                      <th>E-mail</th>
-                      <th>Department</th>
-                      <th>Mailstop</th>
-                      <th>Building</th>
-                      <th>Room</th>
-                      <th>Phone</th>
-                    </tr>
-                  </tfoot>
-                  <tbody id="results-table-body">
-                  </tbody>
-                </table>
-              </div>
-            </div>
-        </div> <!--endResults-->
-
-      </div> <!-- end Fullcontainer -->
+          <div class="col-md-12">
+            <h3>People Results</h3>
+            <table id="directory" class="display table nowrap" style="width:100%">
+              <thead>
+                <tr>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>E-mail</th>
+                  <th>Department</th>
+                  <th>Mailstop</th>
+                  <th>Building</th>
+                  <th>Room</th>
+                  <th>Phone</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>E-mail</th>
+                  <th>Department</th>
+                  <th>Mailstop</th>
+                  <th>Building</th>
+                  <th>Room</th>
+                  <th>Phone</th>
+                </tr>
+              </tfoot>
+              <tbody id="results-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div> <!--endResults-->
+    </div> <!-- end Fullcontainer -->
     </main>
     <footer>
       <div class="topFooter">
@@ -340,6 +348,7 @@
     <script type="text/javascript" src="https://cdn.datatables.net/rowreorder/1.2.3/js/dataTables.rowReorder.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.1/js/dataTables.responsive.min.js"></script>
 
+    <script type="text/javascript" src="js/fetch-departments.js"></script>
     <script type="text/javascript" src="js/directory.js"></script>
 
     <!-- Google Analytics Code -->
