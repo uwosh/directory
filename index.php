@@ -151,7 +151,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="">Phone</span>
                   </div>
-                  <input id="phone" type="number" class="form-control" placeholder="Enter the last 4 digits of a campus phone number ex. 3020" aria-label="Enter the last 4 digits of a campus phone number ex. 3020" aria-describedby="basic-addon1">
+                  <input id="phone" type="number" class="form-control" placeholder="Enter the last 4 digits of a campus phone number ex. 1234" aria-label="Enter the last 4 digits of a campus phone number ex. 3020" aria-describedby="basic-addon1">
                   
                 </div>
                 
