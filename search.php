@@ -99,7 +99,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         $persons_result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $dept_result = $dept_stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        if( isset($dept_stmt) ) {
+          $dept_result = $dept_stmt->fetchAll(PDO::FETCH_ASSOC);
+        } else{
+          $dept_result = null;
+        }
+        
         $result = array("department_result"=>$dept_result, "persons_result"=>$persons_result);
 
         echo json_encode($result);

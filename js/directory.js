@@ -96,6 +96,12 @@ $(document).ready(function(){
         $("#retired-staff").addClass('active');
     });
 
+    // Hiding the results tables
+    $("#bootstrap-pills2 .nav-item").click(function (){ 
+        $(".department-row").css("display", "none");
+        $(".results-row").css("display", "none");
+    });
+
    // department select logic
    //edited to support a select element instead of a dropdown button
    $('#select-department-content').change(function() {
@@ -224,6 +230,11 @@ $(document).ready(function(){
             grecaptcharesponse: recaptcha_data
         };
 
+        // Emptying the tables
+        $("#department-results-table-body").empty();
+        $("#results-table-body").empty();
+
+        // Getting the data
         $.ajax({
             url: "search.php",
             data: data,
