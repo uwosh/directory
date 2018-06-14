@@ -122,7 +122,9 @@ $(document).ready(function(){
         //debugger;
         checkVars();
         checkEmpty();
-        grecaptcha.reset(); // resets the reCAPTCHA
+        if(typeof(grecaptcha) !== "undefined") { 
+            grecaptcha.reset(); // resets the reCAPTCHA
+        }
     });
     //enter key => search
     $( '#first-name-search' ).keypress(function( event ) {
@@ -219,91 +221,95 @@ $(document).ready(function(){
 
    function makeTable(){
 
-        var recaptcha_data = grecaptcha.getResponse();
+    // checks if the grecaptcha variable exists and if the IP is from UWO
+    var recaptcha_data = null;
+    if(typeof(grecaptcha) !== "undefined") { 
+        recaptcha_data = grecaptcha.getResponse();
+    }
 
-        var data = {
-            group: group,
-            department: department,
-            firstname: firstname,
-            lastname: lastname,
-            phone: phone,
-            grecaptcharesponse: recaptcha_data
-        };
+    var data = {
+        group: group,
+        department: department,
+        firstname: firstname,
+        lastname: lastname,
+        phone: phone,
+        grecaptcharesponse: recaptcha_data
+    };
 
-        // Emptying the tables
-        $("#department-results-table-body").empty();
-        $("#results-table-body").empty();
+    // Emptying the tables
+    $("#department-results-table-body").empty();
+    $("#results-table-body").empty();
 
-        // Getting the data
-        $.ajax({
-            url: "search.php",
-            data: data,
-            type: 'POST',
-            success: function(data){
-                data = JSON.parse(data);
-                department_results = data["department_result"];
-                persons_results = data["persons_result"]
+    // Getting the data
+    $.ajax({
+        url: "search.php",
+        data: data,
+        type: 'POST',
+        success: function(data){
+            data = JSON.parse(data);
+            department_results = data["department_result"];
+            persons_results = data["persons_result"]
 
-                // Creating the department data table
-                if(department != ""){
-                    $('.department-row').css('display', 'flex');
+            // Creating the department data table
+            if(department != ""){
+                $('.department-row').css('display', 'flex');
 
-                    $('#department-directory').DataTable({
-                        "searching": false,
-                        "paging": false,
-                        "bDestroy": true,
-                        "autoWidth": false,
-                        rowReorder: {
-                            selector: 'td:nth-child(2)'
-                        },
-                        responsive: true,
-                        data: department_results,
-                        columns: [
-                            { data: 'description' },
-                            { data: 'phone',
-                                "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-                                    if (oData.phone != null) {
-                                        $(nTd).html("<a href='tel:'920424"+oData.phone+">920-424-"+oData.phone+"</a>");
-                                    }
-                                }
-                            },
-                            { data: 'location' }
-                        ]
-                    });
-                }
-
-                // Creating the people data table
-                $('#directory').DataTable({
+                $('#department-directory').DataTable({
                     "searching": false,
+                    "paging": false,
                     "bDestroy": true,
                     "autoWidth": false,
                     rowReorder: {
                         selector: 'td:nth-child(2)'
                     },
                     responsive: true,
-                    data: persons_results,
+                    data: department_results,
                     columns: [
-                        
-                        { data: 'firstname' },
-                        { data: 'lastname' },
-                        { data: 'username',
-                            "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-                            $(nTd).html("<a href='mailto:"+oData.username+"@uwosh.edu'>"+oData.username+"@uwosh.edu</a>");
-                            }
-                        },
-                        { data: 'department' },
-                        { data: 'mailstop' },
-                        { data: 'building' },
-                        { data: 'room' },
+                        { data: 'description' },
                         { data: 'phone',
                             "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
                                 if (oData.phone != null) {
-                                    $(nTd).html("<a href='tel:'920424"+oData.phone+">920-424-"+oData.phone+"</a>");
+                                    $(nTd).html("<a href='tel:920424"+oData.phone+"'>920-424-"+oData.phone+"</a>");
                                 }
-                            } 
-                        }
+                            }
+                        },
+                        { data: 'location' }
                     ]
                 });
+            }
+
+            // Creating the people data table
+            $('#directory').DataTable({
+                "searching": false,
+                "bDestroy": true,
+                "autoWidth": false,
+                rowReorder: {
+                    selector: 'td:nth-child(2)'
+                },
+                responsive: true,
+                data: persons_results,
+                columns: [
+                    
+                    { data: 'firstname' },
+                    { data: 'lastname' },
+                    { data: 'username',
+                        "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
+                        $(nTd).html("<a href='mailto:"+oData.username+"@uwosh.edu'>"+oData.username+"@uwosh.edu</a>");
+                        }
+                    },
+                    { data: 'department' },
+                    { data: 'mailstop' },
+                    { data: 'building' },
+                    { data: 'room' },
+                    { data: 'phone',
+                        "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
+                            if (oData.phone != null) {
+                                $(nTd).html("<a href='tel:920424"+oData.phone+"'>920-424-"+oData.phone+"</a>");
+                            }
+                        } 
+                    }
+                ]
+            });
             }
         });
     };

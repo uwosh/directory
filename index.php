@@ -1,4 +1,15 @@
-<?php ini_set('display_errors', '1'); ?>
+<?php
+ini_set( 'display_errors', '1' );
+
+include_once( "functions.php" );
+
+// Get the IP address of the user who clicked the submit button
+$ip = getUserIPAddress();
+
+// Determine if the IP is from UW-Oshkosh
+$isIPFromUWO = isIPFromUWO( $ip );
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -36,8 +47,12 @@
   <!-- <link rel="stylesheet" type="text/css" media="all" href="styles/nestedStyle.css"> -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
  
-   <!-- Google reCAPTCHA -->
-   <script src='https://www.google.com/recaptcha/api.js'></script>
+  <?php if(!$isIPFromUWO) { // if the IP address isn't from UWO, load the recaptcha library.
+    ?>
+    <!-- Google reCAPTCHA -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <?php
+  } ?>
 
   </head>
   <header>
@@ -165,10 +180,16 @@
                   </select>
                 </div>
 
-                <!-- reCAPTCHA -->
-                <div class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="6Lf1iFoUAAAAAMl6jqQOB3io4pflhlP0AVcj__LB"></div>
-
-                <a href="#resultsContainer"><button id="search-btn" type="button" class="btn btn-primary" disabled>Search</button></a>
+                <?php
+                  if(!$isIPFromUWO){
+                    ?>
+                    <!-- reCAPTCHA -->
+                    <div class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="6Lf1iFoUAAAAAMl6jqQOB3io4pflhlP0AVcj__LB"></div>
+                    <?php
+                  }
+                ?>
+                
+                <a href="#resultsContainer"><button id="search-btn" type="button" class="btn btn-primary" <?php if(!$isIPFromUWO){ echo "disabled"; } ?>>Search</button></a>
                 <!-- <button id="search-btn" type="button" class="btn btn-primary">Search</button> -->
 
                 <p id="errorName" style="color: red; display: none; ">Please enter a first and/or last name </p>
