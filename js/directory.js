@@ -269,7 +269,7 @@ $(document).ready(function(){
                         { data: 'phone',
                             "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
                                 if (oData.phone != null) {
-                                    $(nTd).html("<a href='tel:'920424"+oData.phone+">920-424-"+oData.phone+"</a>");
+                                    $(nTd).html("<a href='tel:920424"+oData.phone+"'>920-424-"+oData.phone+"</a>");
                                 }
                             }
                         },
@@ -304,7 +304,7 @@ $(document).ready(function(){
                     { data: 'phone',
                         "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
                             if (oData.phone != null) {
-                                $(nTd).html("<a href='tel:'920424"+oData.phone+">920-424-"+oData.phone+"</a>");
+                                $(nTd).html("<a href='tel:920424"+oData.phone+"'>920-424-"+oData.phone+"</a>");
                             }
                         } 
                     }
