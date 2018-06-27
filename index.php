@@ -238,14 +238,14 @@ $isIPFromUWO = isIPFromUWO( $ip );
               <thead>
                 <tr>
                   <th>Item</th>
-                  <th>Campus Phone</th>
+                  <th>Phone</th>
                   <th>Office</th>
                 </tr>
               </thead>
               <tfoot>
                 <tr>
                   <th>Item</th>
-                  <th>Campus Phone</th>
+                  <th>Phone</th>
                   <th>Office</th>
                 </tr>
               </tfoot>
@@ -256,17 +256,20 @@ $isIPFromUWO = isIPFromUWO( $ip );
         <div class="row results-row">
           <div class="col-md-12">
             <h3>People Results</h3>
+            <div class="alert alert-info">
+              <strong>Don't see what you are looking for?</strong> Click the green plus button to expand the row.
+            </div>
             <table id="directory" class="display table nowrap" style="width:100%">
               <thead>
                 <tr>
                   <th>First Name</th>
                   <th>Last Name</th>
                   <th>E-mail</th>
+                  <th>Phone</th>
                   <th>Department</th>
                   <th>Mailstop</th>
                   <th>Building</th>
                   <th>Room</th>
-                  <th>Phone</th>
                 </tr>
               </thead>
               <tfoot>
@@ -274,11 +277,11 @@ $isIPFromUWO = isIPFromUWO( $ip );
                   <th>First Name</th>
                   <th>Last Name</th>
                   <th>E-mail</th>
+                  <th>Phone</th>
                   <th>Department</th>
                   <th>Mailstop</th>
                   <th>Building</th>
                   <th>Room</th>
-                  <th>Phone</th>
                 </tr>
               </tfoot>
               <tbody id="results-table-body"></tbody>
