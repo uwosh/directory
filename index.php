@@ -262,11 +262,11 @@ $isIPFromUWO = isIPFromUWO( $ip );
                   <th>First Name</th>
                   <th>Last Name</th>
                   <th>E-mail</th>
+                  <th>Phone</th>
                   <th>Department</th>
                   <th>Mailstop</th>
                   <th>Building</th>
                   <th>Room</th>
-                  <th>Phone</th>
                 </tr>
               </thead>
               <tfoot>
@@ -274,11 +274,11 @@ $isIPFromUWO = isIPFromUWO( $ip );
                   <th>First Name</th>
                   <th>Last Name</th>
                   <th>E-mail</th>
+                  <th>Phone</th>
                   <th>Department</th>
                   <th>Mailstop</th>
                   <th>Building</th>
                   <th>Room</th>
-                  <th>Phone</th>
                 </tr>
               </tfoot>
               <tbody id="results-table-body"></tbody>

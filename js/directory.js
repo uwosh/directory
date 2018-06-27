@@ -297,17 +297,17 @@ $(document).ready(function(){
                         $(nTd).html("<a href='mailto:"+oData.username+"@uwosh.edu'>"+oData.username+"@uwosh.edu</a>");
                         }
                     },
-                    { data: 'department' },
-                    { data: 'mailstop' },
-                    { data: 'building' },
-                    { data: 'room' },
                     { data: 'phone',
                         "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
                             if (oData.phone != null) {
                                 $(nTd).html("<a href='tel:920424"+oData.phone+"'>920-424-"+oData.phone+"</a>");
                             }
                         } 
-                    }
+                    },
+                    { data: 'department' },
+                    { data: 'mailstop' },
+                    { data: 'building' },
+                    { data: 'room' }
                 ]
             });
             }
