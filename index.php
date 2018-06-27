@@ -238,14 +238,14 @@ $isIPFromUWO = isIPFromUWO( $ip );
               <thead>
                 <tr>
                   <th>Item</th>
-                  <th>Campus Phone</th>
+                  <th>Phone</th>
                   <th>Office</th>
                 </tr>
               </thead>
               <tfoot>
                 <tr>
                   <th>Item</th>
-                  <th>Campus Phone</th>
+                  <th>Phone</th>
                   <th>Office</th>
                 </tr>
               </tfoot>
