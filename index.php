@@ -256,6 +256,9 @@ $isIPFromUWO = isIPFromUWO( $ip );
         <div class="row results-row">
           <div class="col-md-12">
             <h3>People Results</h3>
+            <div class="alert alert-info">
+              <strong>Don't see what you are looking for?</strong> Click the green plus button to expand the row.
+            </div>
             <table id="directory" class="display table nowrap" style="width:100%">
               <thead>
                 <tr>
