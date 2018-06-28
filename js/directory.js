@@ -22,6 +22,7 @@ $(document).ready(function() {
     $("#errorName").css("display", "none");
     $("#errorNameDepartment").css("display", "none");
     $("#errorNamePhone").css("display", "none");
+    $("#errorNameMinCharacter").css("display", "none");
   });
 
   $("#faculty-staff-pill").click(function() {
@@ -164,12 +165,13 @@ $(document).ready(function() {
       if (group == "all" || group == "students") {
         $("#errorNameDepartment").css("display", "none");
         $("#errorNamePhone").css("display", "none");
+        $("#errorNameMinCharacter").css("display", "none");
 
         $("#errorName").css("display", "flex");
       } else if (group == "faculty-and-staff") {
         $("#errorName").css("display", "none");
         $("#errorNamePhone").css("display", "none");
-
+        $("#errorNameMinCharacter").css("display", "none");
         $("#errorNameDepartment").css("display", "flex");
       }
       //if the search fields are not empty, display the table (and hide any error messages)
@@ -185,6 +187,7 @@ $(document).ready(function() {
         } else {
           //phone length is 4
           $("#errorNamePhone").css("display", "none");
+          $("#errorNameMinCharacter").css("display", "none");
           $("#errorNameDepartment").css("display", "none");
           $("#errorName").css("display", "none");
 
@@ -194,12 +197,21 @@ $(document).ready(function() {
       }
       //not phone group at all
       else {
-        $("#errorNameDepartment").css("display", "none");
-        $("#errorName").css("display", "none");
-        $("#errorNamePhone").css("display", "none");
+        var first = $("#first-name-search").val();
+        var last = $("#last-name-search").val();
 
-        $(".results-row").css("display", "flex");
-        makeTable();
+        if (first.length >= 3 || last.length >= 3) {
+          $("#errorNameDepartment").css("display", "none");
+          $("#errorName").css("display", "none");
+          $("#errorNamePhone").css("display", "none");
+          $("#errorNameMinCharacter").css("display", "none");
+  
+          $(".results-row").css("display", "flex");
+          makeTable();
+        } else {
+          // search criteria is less than minimum requirements
+          $("#errorNameMinCharacter").css("display", "flex");
+        }
       }
     }
   }
