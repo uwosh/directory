@@ -195,6 +195,7 @@ $isIPFromUWO = isIPFromUWO( $ip );
                 <p id="errorName" style="color: red; display: none; ">Please enter a first and/or last name </p>
                 <p id="errorNameDepartment" style="color: red; display: none;"> Please enter a first and/or last name, or select a department</p>
                 <p id="errorNamePhone" style="color: red; display: none;"> Please enter 4 digits</p>
+                <p id="errorNameMinCharacter" style="color: red; display: none;"> Please enter a search criteria at least 3 characters in length</p>
               </div>
               <!--
               <div class="col-md-4">

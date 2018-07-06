@@ -17,84 +17,89 @@ function fetchDirectoryResults($hostname, $port, $database, $user, $password) {
   $lastname = $_POST["lastname"];
   $phone = $_POST["phone"];
 
-  // Create connection
-  try {
-    $conn = new PDO( "mysql:host=$hostname;port=$port;dbname=$database", $user, $password );
-  } catch( PDOException $e ) {
-    echo "Connection failed: " + $e->getMessage();
-  }
-
-  if($group == "all"){
-    // get both UWO staff and students
-    $stmt = $conn->prepare(
-      "SELECT username, lastname, firstname, mi, is_fac, is_stf, is_stu, is_oth, department, mailstop, building, room, phone
-        FROM directory_public
-        LEFT JOIN directory_public_dept USING (username)
-        WHERE lastname LIKE '%' ? '%' AND firstname LIKE '%' ? '%'
-        ORDER BY lastname, firstname"
-    );
-    $stmt->execute(array($lastname, $firstname));
-  } else if($group == "faculty-and-staff"){
-    // only get staff
-    if($department != ""){
-      $stmt = $conn->prepare(
-        "SELECT username, lastname, firstname, mi, is_fac, is_stf, is_stu, is_oth, department, mailstop, building, room, phone
-          FROM directory_public
-          LEFT JOIN directory_public_dept USING (username)
-          WHERE lastname LIKE '%' ? '%' AND firstname LIKE '%' ? '%' AND department = ? AND ( is_fac = 'Y' OR is_stf = 'Y')
-          ORDER BY lastname, firstname"
-      );
-      $stmt->execute(array($lastname, $firstname, $department));
-    } else{
-      $stmt = $conn->prepare(
-        "SELECT username, lastname, firstname, mi, is_fac, is_stf, is_stu, is_oth, department, mailstop, building, room, phone
-          FROM directory_public
-          LEFT JOIN directory_public_dept USING (username)
-          WHERE lastname LIKE '%' ? '%' AND firstname LIKE '%' ? '%' AND department LIKE '%' ? '%' AND ( is_fac = 'Y' OR is_stf = 'Y')
-          ORDER BY lastname, firstname"
-      );
-      $stmt->execute(array($lastname, $firstname, $department));
+  if( strlen($firstname) >= 3 || strlen($lastname) >= 3 || strlen($phone) == 4 || strcmp($department, "") !== 0) {
+    // Create connection
+    try {
+      $conn = new PDO( "mysql:host=$hostname;port=$port;dbname=$database", $user, $password );
+    } catch( PDOException $e ) {
+      echo "Connection failed: " + $e->getMessage();
     }
 
-    // get the department information as well
-    $dept_stmt = $conn->prepare(
-      "SELECT description, phone, location FROM directory_geninfo WHERE dept LIKE ? ORDER BY description"
-    );
-    $dept_stmt->execute(array($department));
-  } else if ($group == "students"){
-    // only get students
-    $stmt = $conn->prepare(
-      "SELECT username, lastname, firstname, mi, is_fac, is_stf, is_stu, is_oth, department, mailstop, building, room, phone
-        FROM directory_public
-        LEFT JOIN directory_public_dept USING (username)
-        WHERE lastname LIKE '%' ? '%' AND firstname LIKE '%' ? '%' AND is_stu = 'Y'
-        ORDER BY lastname, firstname"
-    );
-    $stmt->execute(array($lastname, $firstname));
-  }
-  else{
-    //phone
-    $stmt = $conn->prepare(
-      "SELECT username, lastname, firstname, mi, is_fac, is_stf, is_stu, is_oth, department, mailstop, building, room, phone
-        FROM directory_public_dept
-        LEFT JOIN  directory_public USING (username)
-        WHERE phone = ?
-        ORDER BY lastname, firstname"
-    );
-    $stmt->execute(array($phone));
-  }
+    if($group == "all"){
+      // get both UWO staff and students
+      $stmt = $conn->prepare(
+        "SELECT username, lastname, firstname, mi, is_fac, is_stf, is_stu, is_oth, department, mailstop, building, room, phone
+          FROM directory_public
+          LEFT JOIN directory_public_dept USING (username)
+          WHERE lastname LIKE '%' ? '%' AND firstname LIKE '%' ? '%'
+          ORDER BY lastname, firstname"
+      );
+      $stmt->execute(array($lastname, $firstname));
+    } else if($group == "faculty-and-staff"){
+      // only get staff
+      if($department != ""){
+        $stmt = $conn->prepare(
+          "SELECT username, lastname, firstname, mi, is_fac, is_stf, is_stu, is_oth, department, mailstop, building, room, phone
+            FROM directory_public
+            LEFT JOIN directory_public_dept USING (username)
+            WHERE lastname LIKE '%' ? '%' AND firstname LIKE '%' ? '%' AND department = ? AND ( is_fac = 'Y' OR is_stf = 'Y')
+            ORDER BY lastname, firstname"
+        );
+        $stmt->execute(array($lastname, $firstname, $department));
+      } else{
+        $stmt = $conn->prepare(
+          "SELECT username, lastname, firstname, mi, is_fac, is_stf, is_stu, is_oth, department, mailstop, building, room, phone
+            FROM directory_public
+            LEFT JOIN directory_public_dept USING (username)
+            WHERE lastname LIKE '%' ? '%' AND firstname LIKE '%' ? '%' AND department LIKE '%' ? '%' AND ( is_fac = 'Y' OR is_stf = 'Y')
+            ORDER BY lastname, firstname"
+        );
+        $stmt->execute(array($lastname, $firstname, $department));
+      }
 
-  $persons_result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-  
-  if( isset($dept_stmt) ) {
-    $dept_result = $dept_stmt->fetchAll(PDO::FETCH_ASSOC);
+      // get the department information as well
+      $dept_stmt = $conn->prepare(
+        "SELECT description, phone, location FROM directory_geninfo WHERE dept LIKE ? ORDER BY description"
+      );
+      $dept_stmt->execute(array($department));
+    } else if ($group == "students"){
+      // only get students
+      $stmt = $conn->prepare(
+        "SELECT username, lastname, firstname, mi, is_fac, is_stf, is_stu, is_oth, department, mailstop, building, room, phone
+          FROM directory_public
+          LEFT JOIN directory_public_dept USING (username)
+          WHERE lastname LIKE '%' ? '%' AND firstname LIKE '%' ? '%' AND is_stu = 'Y'
+          ORDER BY lastname, firstname"
+      );
+      $stmt->execute(array($lastname, $firstname));
+    }
+    else{
+      //phone
+      $stmt = $conn->prepare(
+        "SELECT username, lastname, firstname, mi, is_fac, is_stf, is_stu, is_oth, department, mailstop, building, room, phone
+          FROM directory_public_dept
+          LEFT JOIN  directory_public USING (username)
+          WHERE phone = ?
+          ORDER BY lastname, firstname"
+      );
+      $stmt->execute(array($phone));
+    }
+
+    $persons_result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+    if( isset($dept_stmt) ) {
+      $dept_result = $dept_stmt->fetchAll(PDO::FETCH_ASSOC);
+    } else{
+      $dept_result = null;
+    }
+    
+    $result = array("department_result"=>$dept_result, "persons_result"=>$persons_result);
+
+    echo json_encode($result);
   } else{
-    $dept_result = null;
-  }
-  
-  $result = array("department_result"=>$dept_result, "persons_result"=>$persons_result);
-
-  echo json_encode($result);
+    // firstname or lastname don't meet search requirements, return nothing
+    echo json_encode("");
+  }  
 }
 
 // Checks if form has been submitted
