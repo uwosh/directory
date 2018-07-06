@@ -199,8 +199,9 @@ $(document).ready(function() {
       else {
         var first = $("#first-name-search").val();
         var last = $("#last-name-search").val();
+        var dept = $("#select-department-content").val();
 
-        if (first.length >= 3 || last.length >= 3) {
+        if (first.length >= 3 || last.length >= 3 || dept != "Select a Department") {
           $("#errorNameDepartment").css("display", "none");
           $("#errorName").css("display", "none");
           $("#errorNamePhone").css("display", "none");

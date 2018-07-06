@@ -17,7 +17,7 @@ function fetchDirectoryResults($hostname, $port, $database, $user, $password) {
   $lastname = $_POST["lastname"];
   $phone = $_POST["phone"];
 
-  if( strlen($firstname) >= 3 || strlen($lastname) >= 3 ) {
+  if( strlen($firstname) >= 3 || strlen($lastname) >= 3 || strlen($phone) == 4 || strcmp($department, "") !== 0) {
     // Create connection
     try {
       $conn = new PDO( "mysql:host=$hostname;port=$port;dbname=$database", $user, $password );
