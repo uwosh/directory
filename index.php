@@ -143,7 +143,7 @@ $isIPFromUWO = isIPFromUWO( $ip );
                     <a class="nav-link active" id="all-pill" value="all" href="#" role="tab">All</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" id="faculty-staff-pill" value="faculty-and-staff" href="#" role="tab">Faculty and Staff</a>
+                    <a class="nav-link" id="faculty-staff-pill" value="faculty-and-staff" href="#" role="tab">Faculty / Staff / Department</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" id="students-pill" value="students" href="#" role="tab">Students</a>
