@@ -42,7 +42,7 @@ function fetchDirectoryResults($hostname, $port, $database, $user, $password) {
           "SELECT username, lastname, firstname, mi, is_fac, is_stf, is_stu, is_oth, department, mailstop, building, room, phone
             FROM directory_public
             LEFT JOIN directory_public_dept USING (username)
-            WHERE lastname LIKE '%' ? '%' AND firstname LIKE '%' ? '%' AND department = ? AND ( is_fac = 'Y' OR is_stf = 'Y')
+            WHERE lastname LIKE '%' ? '%' AND firstname LIKE '%' ? '%' AND department LIKE ? AND ( is_fac = 'Y' OR is_stf = 'Y')
             ORDER BY lastname, firstname"
         );
         $stmt->execute(array($lastname, $firstname, $department));
